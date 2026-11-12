@@ -5887,13 +5887,29 @@ body.vimi-store {
 
 @media (max-width: 768px) {
   .vimi-toast {
-    bottom: 88px !important;
+    bottom: 24px !important;
     font-size: 0.78rem !important;
     padding: 10px 16px !important;
   }
-  body.vimi-store {
-    padding-bottom: 84px !important;
+  .vimi-m-hero {
+    padding-bottom: 32px !important;
   }
+  .m-cta {
+    display: none !important;
+  }
+}
+
+.m-card-inline-actions {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.m-card-inline-actions .m-btn {
+  height: 44px;
+  font-size: 11px;
+  border-radius: 10px;
 }
 
 /* 3. Store Policies & Trust Modal */
