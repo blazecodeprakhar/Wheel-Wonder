@@ -4104,3 +4104,1145 @@ body {
   color: #ffffff !important;
   padding: 10px !important;
 }
+
+
+/* ==========================================================================
+   WHEEL&WONDER — HOT WHEELS TOY STORE THEME (ORANGE, WHITE & BLUE)
+   Authentic Blister-Card & Orange-Track Aesthetic
+   ========================================================================== */
+:root {
+  --hw-blue: #0052b4;
+  --hw-blue-dark: #002b6b;
+  --hw-blue-deep: #001b44;
+  --hw-blue-bright: #0077e6;
+  --hw-orange: #ff6b00;
+  --hw-orange-hot: #ff4500;
+  --hw-yellow: #ffd100;
+  --hw-white: #ffffff;
+  --hw-ice: #f2f7ff;
+  --hw-ink: #0b1e3d;
+  --hw-muted: #475569;
+  --font-hw-display: 'Racing Sans One', 'Bangers', 'Syne', sans-serif;
+  --font-hw-tech: 'Chakra Petch', 'Plus Jakarta Sans', sans-serif;
+}
+
+body.vimi-store {
+  background-color: var(--hw-ice) !important;
+  color: var(--hw-ink) !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Hot Wheels Racing Typography */
+.hero-title,
+.section-title,
+.anatomy-title,
+.fit-finder-title,
+.story-heading,
+.m-h1,
+.buying-window-title,
+.cart-drawer__title,
+.login-title {
+  font-family: var(--font-hw-display) !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+}
+
+/* Checkered / Orange Track Announcement Bar */
+.announcement-bar {
+  background: linear-gradient(90deg, #ff3d00 0%, #ff6b00 50%, #ff9500 100%) !important;
+  border-bottom: 3px solid var(--hw-yellow) !important;
+  padding: 9px 0 !important;
+}
+
+.announcement-track {
+  color: #ffffff !important;
+  font-family: var(--font-hw-tech) !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.ticker-divider {
+  color: var(--hw-yellow) !important;
+  font-weight: 900 !important;
+}
+
+/* Electric Hot Wheels Blue Sticky Header */
+.site-header {
+  background: rgba(0, 59, 142, 0.97) !important;
+  border-bottom: 4px solid var(--hw-orange) !important;
+  box-shadow: 0 6px 24px rgba(0, 27, 68, 0.35) !important;
+}
+
+.site-header.header-scrolled {
+  background: rgba(0, 43, 107, 0.99) !important;
+  border-bottom-color: var(--hw-yellow) !important;
+}
+
+.header__menu-list .menu-item a {
+  font-family: var(--font-hw-tech) !important;
+  color: #dbeafe !important;
+  font-weight: 700 !important;
+}
+
+.header__menu-list .menu-item a:hover,
+.header__menu-list .menu-item.active a {
+  color: var(--hw-yellow) !important;
+}
+
+.header__menu-list .menu-item.active a::after {
+  background-color: var(--hw-orange) !important;
+  height: 3px !important;
+}
+
+.header__currency-badge {
+  background: var(--hw-blue-dark) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.header__icon-btn {
+  color: #ffffff !important;
+}
+
+.header__icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+.header__cart-badge {
+  background-color: var(--hw-orange) !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff;
+}
+
+/* Mobile Nav Drawer in Hot Wheels Blue */
+.mobile-nav-content {
+  background: linear-gradient(180deg, #003b8e 0%, #001b44 100%) !important;
+  border-right: 4px solid var(--hw-orange) !important;
+}
+
+.mobile-nav-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.mobile-nav-close {
+  background: var(--hw-orange) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.mobile-nav-list a {
+  color: #ffffff !important;
+  font-family: var(--font-hw-tech) !important;
+}
+
+.mobile-login-link {
+  background: var(--hw-orange) !important;
+  border-color: var(--hw-yellow) !important;
+  color: #ffffff !important;
+}
+
+.mobile-nav-perks {
+  color: #dbeafe !important;
+  border-top-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ==========================================================================
+   DESKTOP HERO — HOT WHEELS TRACK & BLISTER CARD
+   ========================================================================== */
+.hero-section {
+  background:
+    repeating-linear-gradient(
+      -35deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 18px,
+      transparent 18px,
+      transparent 36px
+    ),
+    radial-gradient(circle at 80% 30%, #0077e6 0%, #0046a8 52%, #00235c 100%) !important;
+  border-bottom: 5px solid var(--hw-orange) !important;
+  padding: 54px 0 74px !important;
+}
+
+.hero-bg-watermark {
+  color: transparent !important;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.06) !important;
+  font-family: var(--font-hw-display) !important;
+}
+
+.hero-tag-badge {
+  background: rgba(0, 27, 68, 0.75) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+}
+
+.badge-dot {
+  background-color: var(--hw-yellow) !important;
+}
+
+.crazzzy-pill {
+  background: linear-gradient(90deg, #ff6b00, #ffd100) !important;
+  color: #0b1e3d !important;
+  font-family: var(--font-hw-tech) !important;
+  font-weight: 900 !important;
+  box-shadow: 0 4px 14px rgba(255, 107, 0, 0.45);
+}
+
+.hero-title {
+  font-size: 4.3rem !important;
+  line-height: 1.02 !important;
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #ffd100 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 5px 0 rgba(0, 27, 68, 0.65)) !important;
+  animation: none !important;
+}
+
+.hero-title .text-gradient {
+  background: linear-gradient(90deg, #ffd100 0%, #ff6b00 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.hero-description {
+  color: #e6f0ff !important;
+  font-size: 1.06rem !important;
+}
+
+.hero-features-chips .chip {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  font-family: var(--font-hw-tech) !important;
+  backdrop-filter: blur(6px);
+}
+
+.hero-cta-group .btn--primary,
+.btn--primary {
+  background: linear-gradient(180deg, #ff7b00 0%, #ff4500 100%) !important;
+  color: #ffffff !important;
+  border: 2px solid #ffd100 !important;
+  border-radius: 10px !important;
+  font-family: var(--font-hw-tech) !important;
+  font-weight: 800 !important;
+  box-shadow: 0 5px 0 #9a2400, 0 10px 22px rgba(255, 69, 0, 0.38) !important;
+}
+
+.hero-cta-group .btn--primary:hover,
+.btn--primary:hover {
+  background: linear-gradient(180deg, #ff8c1a 0%, #ff5500 100%) !important;
+  transform: translateY(-2px) !important;
+}
+
+.hero-cta-group .btn--outline {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  border-radius: 10px !important;
+  font-family: var(--font-hw-tech) !important;
+}
+
+.hero-cta-group .btn--outline:hover {
+  background: #ffffff !important;
+  color: var(--hw-blue-dark) !important;
+}
+
+.avatar-circle {
+  background: var(--hw-orange) !important;
+  border-color: var(--hw-yellow) !important;
+  color: #ffffff !important;
+}
+
+.avatar-circle:first-child {
+  background: var(--hw-yellow) !important;
+  color: var(--hw-blue-dark) !important;
+}
+
+.proof-text strong {
+  color: #ffffff !important;
+}
+
+.proof-text span {
+  color: #bfdbfe !important;
+}
+
+/* Desktop Hero Blister Showcase Card */
+.hero-card-showcase {
+  background: #ffffff !important;
+  border: 3px solid var(--hw-orange) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 24px 60px rgba(0, 18, 51, 0.55), 0 0 0 6px rgba(255, 209, 0, 0.25) !important;
+}
+
+.hero-card-showcase:hover {
+  border-color: var(--hw-yellow) !important;
+}
+
+.showcase-badge {
+  background: var(--hw-blue) !important;
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  font-family: var(--font-hw-tech) !important;
+}
+
+.showcase-live-pill {
+  background: var(--hw-orange) !important;
+  color: #ffffff !important;
+  font-family: var(--font-hw-tech) !important;
+}
+
+.live-dot {
+  background: var(--hw-yellow) !important;
+}
+
+.hero-slider-stage {
+  background: #f4f8ff !important;
+  border: 2px solid #dbeafe !important;
+  box-shadow: none !important;
+}
+
+.hero-stage-arrow {
+  background: rgba(0, 59, 142, 0.88) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.hero-stage-arrow:hover {
+  background: var(--hw-orange) !important;
+}
+
+.hero-dot {
+  background: #cbd5e1 !important;
+}
+
+.hero-dot.active {
+  background: var(--hw-blue) !important;
+}
+
+.hero-dot-fill {
+  background: var(--hw-orange) !important;
+}
+
+.hero-slider-counter {
+  color: var(--hw-blue) !important;
+  font-weight: 800 !important;
+}
+
+.showcase-name {
+  color: var(--hw-ink) !important;
+  font-family: var(--font-hw-tech) !important;
+  font-weight: 800 !important;
+  font-size: 1.12rem !important;
+}
+
+.showcase-sub {
+  color: var(--hw-muted) !important;
+}
+
+.showcase-curr {
+  color: var(--hw-orange-hot) !important;
+  font-family: var(--font-hw-display) !important;
+  font-size: 1.75rem !important;
+}
+
+.showcase-orig {
+  color: var(--hw-blue) !important;
+  font-weight: 800 !important;
+  font-size: 0.75rem !important;
+}
+
+.showcase-actions-grid .btn--secondary {
+  background: var(--hw-blue) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--hw-blue-dark) !important;
+  border-radius: 10px !important;
+  font-family: var(--font-hw-tech) !important;
+}
+
+.showcase-actions-grid .btn--secondary:hover {
+  background: var(--hw-blue-bright) !important;
+}
+
+/* ==========================================================================
+   MOBILE HERO — HOT WHEELS TOY STORE
+   ========================================================================== */
+.vimi-m-hero {
+  background: radial-gradient(120% 60% at 50% 0%, #0077e6 0%, #003b8e 55%, #001b44 100%) !important;
+}
+
+.m-marquee {
+  background: linear-gradient(90deg, #ff3d00, #ff6b00) !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid var(--hw-yellow) !important;
+}
+
+.m-pill {
+  background: rgba(0, 27, 68, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+}
+
+.m-pill.hot {
+  background: var(--hw-yellow) !important;
+  color: var(--hw-blue-dark) !important;
+  border-color: #ffffff !important;
+}
+
+.m-h1 {
+  color: #ffffff !important;
+  text-shadow: 0 4px 0 rgba(0, 27, 68, 0.6) !important;
+}
+
+.m-h1 em {
+  color: var(--hw-yellow) !important;
+  font-style: normal !important;
+  font-family: var(--font-hw-display) !important;
+}
+
+.m-sub {
+  color: #dbeafe !important;
+}
+
+.m-chip {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.m-card {
+  background: #ffffff !important;
+  border: 3px solid var(--hw-orange) !important;
+}
+
+.m-tag {
+  background: var(--hw-blue) !important;
+  color: #ffffff !important;
+}
+
+.m-badge {
+  background: radial-gradient(circle at 30% 30%, #ffd100, #ff6b00 65%, #d82b00) !important;
+  color: #ffffff !important;
+  border: 3px solid #ffffff !important;
+}
+
+.m-dots i {
+  background: #cbd5e1 !important;
+}
+
+.m-dots i.on {
+  background: var(--hw-orange) !important;
+}
+
+.m-name {
+  color: var(--hw-ink) !important;
+}
+
+.m-meta {
+  color: var(--hw-muted) !important;
+}
+
+.m-price {
+  color: var(--hw-orange-hot) !important;
+  font-family: var(--font-hw-display) !important;
+}
+
+.m-rating {
+  color: #dbeafe !important;
+}
+
+.m-cta {
+  background: rgba(0, 43, 107, 0.96) !important;
+  border-top: 3px solid var(--hw-orange) !important;
+}
+
+.m-btn {
+  background: var(--hw-blue) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.m-btn.primary {
+  background: linear-gradient(180deg, #ff7b00, #ff4500) !important;
+  color: #ffffff !important;
+  border-color: var(--hw-yellow) !important;
+}
+
+/* ==========================================================================
+   COUNTDOWN STRIP & 3-TIER REWARD PILLARS
+   ========================================================================== */
+.section-countdown-strip {
+  background: var(--hw-blue-deep) !important;
+  border-top: none !important;
+  border-bottom: 3px solid var(--hw-yellow) !important;
+}
+
+.countdown-status-indicator {
+  background-color: var(--hw-orange) !important;
+}
+
+.countdown-title {
+  color: #ffffff !important;
+  font-family: var(--font-hw-tech) !important;
+}
+
+.time-box {
+  background: var(--hw-blue) !important;
+  border: 2px solid var(--hw-orange) !important;
+  border-radius: 8px !important;
+}
+
+.time-num {
+  color: var(--hw-yellow) !important;
+  font-family: var(--font-hw-display) !important;
+}
+
+.time-label {
+  color: #dbeafe !important;
+}
+
+.section-countdown-strip .btn--outline {
+  background: var(--hw-orange) !important;
+  border-color: var(--hw-yellow) !important;
+  color: #ffffff !important;
+}
+
+.section-features {
+  background: #ffffff !important;
+  border-bottom: 2px solid #dbeafe !important;
+  padding: 34px 0 !important;
+}
+
+.feature-item {
+  background: var(--hw-ice);
+  border: 2px solid #dbeafe;
+  border-radius: 14px;
+  padding: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--hw-orange);
+}
+
+.feature-icon-box {
+  background: linear-gradient(135deg, var(--hw-blue), var(--hw-blue-bright)) !important;
+  border: 2px solid var(--hw-yellow) !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+}
+
+.feature-item:nth-child(2) .feature-icon-box,
+.feature-item:nth-child(3) .feature-icon-box {
+  background: linear-gradient(135deg, #ff6b00, #ff4500) !important;
+}
+
+.feature-title {
+  color: var(--hw-ink) !important;
+  font-family: var(--font-hw-tech) !important;
+  font-weight: 800 !important;
+}
+
+.feature-desc {
+  color: var(--hw-muted) !important;
+}
+
+/* ==========================================================================
+   PRODUCT GRID & HOT WHEELS BLISTER-STYLE CARDS
+   ========================================================================== */
+.section-featured-collection,
+.section-main-collection {
+  background: linear-gradient(180deg, #eef5ff 0%, #ffffff 100%) !important;
+  border-bottom: 3px solid #dbeafe !important;
+}
+
+.section-header__tag {
+  color: var(--hw-orange-hot) !important;
+  font-family: var(--font-hw-tech) !important;
+}
+
+.section-title {
+  background: linear-gradient(90deg, var(--hw-blue-dark) 0%, var(--hw-blue) 55%, var(--hw-orange) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+.section-subtitle {
+  color: var(--hw-muted) !important;
+}
+
+.filter-tab {
+  background: #ffffff !important;
+  border: 2px solid #bfdbfe !important;
+  color: var(--hw-blue-dark) !important;
+  font-family: var(--font-hw-tech) !important;
+}
+
+.filter-tab:hover {
+  border-color: var(--hw-orange) !important;
+  color: var(--hw-orange-hot) !important;
+  background: #fff7ed !important;
+}
+
+.filter-tab.active {
+  background: linear-gradient(90deg, #ff6b00, #ff4500) !important;
+  color: #ffffff !important;
+  border-color: var(--hw-orange-hot) !important;
+  box-shadow: 0 6px 16px rgba(255, 107, 0, 0.35) !important;
+}
+
+/* Toy Store Blister Product Card */
+.product-card {
+  background: #ffffff !important;
+  border: 2px solid #cbd5e1 !important;
+  border-top: 5px solid var(--hw-blue) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 6px 18px rgba(0, 43, 107, 0.08) !important;
+}
+
+.product-card:hover {
+  border-color: var(--hw-orange) !important;
+  border-top-color: var(--hw-orange) !important;
+  box-shadow: 0 18px 36px rgba(0, 59, 142, 0.18), 0 0 0 2px rgba(255, 107, 0, 0.25) !important;
+}
+
+.product-card__media-wrapper {
+  background-color: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0;
+  border-radius: 0 !important;
+}
+
+.product-card__media-wrapper::before,
+.buying-window-media::before {
+  background: linear-gradient(115deg, #e2e8f0 20%, #f1f5f9 40%, #ffffff 50%, #f1f5f9 60%, #e2e8f0 80%) !important;
+}
+
+.product-card__media-wrapper::after,
+.buying-window-media::after {
+  color: var(--hw-blue) !important;
+}
+
+.product-card__badge {
+  background: var(--hw-blue) !important;
+  border: 1.5px solid #ffffff !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-quick-buy {
+  background: var(--hw-orange) !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+  font-family: var(--font-hw-tech) !important;
+}
+
+.btn-quick-buy:hover {
+  background: var(--hw-orange-hot) !important;
+}
+
+.btn-quick-add {
+  background: var(--hw-blue-dark) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--hw-blue) !important;
+  border-radius: 6px !important;
+  font-family: var(--font-hw-tech) !important;
+}
+
+.btn-quick-add:hover {
+  background: var(--hw-blue) !important;
+}
+
+.product-card__rating {
+  color: var(--hw-ink) !important;
+  font-weight: 700;
+}
+
+.product-card__fit-tag {
+  color: var(--hw-blue) !important;
+  font-weight: 700 !important;
+}
+
+.product-card__title a {
+  color: var(--hw-ink) !important;
+  font-family: var(--font-hw-tech) !important;
+  font-weight: 800 !important;
+}
+
+.product-card__title a:hover {
+  color: var(--hw-orange-hot) !important;
+}
+
+.size-pill {
+  background: #eef5ff !important;
+  border: 1px solid #bfdbfe !important;
+  color: var(--hw-blue-dark) !important;
+}
+
+.size-pill.active {
+  background: var(--hw-blue) !important;
+  border-color: var(--hw-blue) !important;
+  color: #ffffff !important;
+}
+
+.product-card__bottom {
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+.price-item--regular {
+  color: var(--hw-orange-hot) !important;
+  font-family: var(--font-hw-display) !important;
+  font-size: 1.45rem !important;
+}
+
+.price-badge-discount {
+  background: var(--hw-yellow) !important;
+  color: var(--hw-blue-dark) !important;
+  border: 1px solid #eab308 !important;
+  font-weight: 800 !important;
+}
+
+.collection-footer-cta {
+  border-top-color: #cbd5e1 !important;
+}
+
+.bottom-guarantee {
+  color: var(--hw-ink) !important;
+}
+
+.collection-footer-cta .btn--outline {
+  border-color: var(--hw-blue) !important;
+  color: var(--hw-blue) !important;
+}
+
+.collection-footer-cta .btn--outline:hover {
+  background: var(--hw-blue) !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   ANATOMY, PACK FINDER, MATRIX & BRAND STORY
+   ========================================================================== */
+.section-anatomy {
+  background: #ffffff !important;
+  border-bottom: 3px solid #dbeafe !important;
+}
+
+.anatomy-tag {
+  color: var(--hw-orange-hot) !important;
+}
+
+.anatomy-title {
+  background: linear-gradient(90deg, var(--hw-blue-dark), var(--hw-orange)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+.anatomy-visual-card {
+  border: 3px solid var(--hw-blue) !important;
+  background: #f8fafc !important;
+  box-shadow: 0 18px 40px rgba(0, 43, 107, 0.14);
+}
+
+.anatomy-badge-float {
+  background: rgba(0, 43, 107, 0.94) !important;
+  border: 2px solid var(--hw-orange) !important;
+  color: #ffffff !important;
+}
+
+.anatomy-badge-float span {
+  color: #ffd100 !important;
+}
+
+.anatomy-point {
+  background: var(--hw-ice) !important;
+  border: 2px solid #dbeafe !important;
+  border-radius: 12px !important;
+}
+
+.anatomy-point:hover {
+  border-color: var(--hw-orange) !important;
+  background: #fff7ed !important;
+}
+
+.point-index {
+  background: linear-gradient(135deg, var(--hw-orange), var(--hw-orange-hot)) !important;
+  color: #ffffff !important;
+}
+
+.point-title {
+  color: var(--hw-ink) !important;
+}
+
+.point-desc {
+  color: var(--hw-muted) !important;
+}
+
+/* Collector Pack Finder */
+.section-fit-finder {
+  background: linear-gradient(135deg, #003b8e 0%, #0052b4 60%, #002b6b 100%) !important;
+  border-bottom: 4px solid var(--hw-orange) !important;
+}
+
+.fit-finder-box {
+  background: #ffffff !important;
+  border: 3px solid var(--hw-orange) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 22px 55px rgba(0, 18, 51, 0.35);
+}
+
+.fit-finder-title {
+  color: var(--hw-blue-dark) !important;
+}
+
+.fit-finder-sub {
+  color: var(--hw-muted) !important;
+}
+
+.fit-label {
+  color: var(--hw-ink) !important;
+}
+
+.fit-select {
+  background: var(--hw-ice) !important;
+  border: 2px solid #bfdbfe !important;
+  color: var(--hw-ink) !important;
+  font-weight: 700;
+}
+
+.fit-result-badge {
+  background: linear-gradient(90deg, #ff6b00, #ff4500) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--hw-yellow) !important;
+  border-radius: 10px !important;
+}
+
+/* Comparison Matrix */
+.section-comparison {
+  background: #ffffff !important;
+  border-bottom: 3px solid #dbeafe !important;
+}
+
+.section-comparison h2 {
+  color: var(--hw-blue-dark) !important;
+}
+
+.section-comparison p {
+  color: var(--hw-muted) !important;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: var(--hw-ink) !important;
+}
+
+.comparison-table th {
+  color: var(--hw-blue) !important;
+}
+
+.highlight-col {
+  background: #fff7ed !important;
+  border-left: 2px solid var(--hw-orange) !important;
+  border-right: 2px solid var(--hw-orange) !important;
+  color: var(--hw-orange-hot) !important;
+}
+
+/* Brand Story */
+.section-brand-story {
+  background: var(--hw-ice) !important;
+  border-bottom: 4px solid var(--hw-orange) !important;
+}
+
+.story-tag {
+  color: var(--hw-orange-hot) !important;
+}
+
+.story-heading {
+  color: var(--hw-blue-dark) !important;
+}
+
+.story-text p {
+  color: var(--hw-muted) !important;
+}
+
+.metric-num {
+  color: var(--hw-orange-hot) !important;
+  font-family: var(--font-hw-display) !important;
+}
+
+.metric-label {
+  color: var(--hw-blue-dark) !important;
+}
+
+.story-card {
+  background: var(--hw-blue-dark) !important;
+  border: 3px solid var(--hw-orange) !important;
+  border-radius: 18px !important;
+  color: #ffffff !important;
+}
+
+.story-badge {
+  background: var(--hw-yellow) !important;
+  color: var(--hw-blue-dark) !important;
+}
+
+.story-quote p {
+  color: #ffffff !important;
+}
+
+.story-quote span {
+  color: var(--hw-yellow) !important;
+}
+
+/* ==========================================================================
+   FOOTER (DEEP HOT WHEELS NAVY + ORANGE TRACK ACCENT)
+   ========================================================================== */
+.site-footer {
+  background: var(--hw-blue-deep) !important;
+  border-top: 5px solid var(--hw-orange) !important;
+  color: #ffffff !important;
+}
+
+.footer-about,
+.footer-contact,
+.footer-links a,
+.newsletter-sub,
+.newsletter-trust {
+  color: #dbeafe !important;
+}
+
+.footer-links a:hover,
+.footer-col__title {
+  color: var(--hw-yellow) !important;
+}
+
+.newsletter-input {
+  background: #002b6b !important;
+  border: 1.5px solid #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+.payment-pill,
+.pay-chip {
+  background: #002b6b !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.footer-bottom {
+  border-top-color: rgba(255, 255, 255, 0.18) !important;
+  color: #bfdbfe !important;
+}
+
+/* ==========================================================================
+   MODALS & CART DRAWER (WHITE + HOT WHEELS BLUE + ORANGE)
+   ========================================================================== */
+.buying-window-container,
+.login-modal-dialog,
+.cart-drawer__panel {
+  background: #ffffff !important;
+  border: 3px solid var(--hw-blue) !important;
+  color: var(--hw-ink) !important;
+}
+
+.buying-window-close,
+.login-modal-close,
+.cart-drawer__close {
+  background: var(--hw-blue) !important;
+  border-color: var(--hw-blue-dark) !important;
+  color: #ffffff !important;
+}
+
+.buying-window-close:hover {
+  background: var(--hw-orange) !important;
+  color: #ffffff !important;
+}
+
+.buying-window-media {
+  background: #f8fafc !important;
+  border: 2px solid #dbeafe;
+}
+
+.buying-window-badge {
+  background: var(--hw-blue) !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.buying-window-logo {
+  background: var(--hw-blue);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.buying-window-brand span,
+.buying-window-tax-note,
+.buying-window-rating,
+.buying-window-perks,
+.login-subtitle,
+.login-perks-box {
+  color: var(--hw-muted) !important;
+}
+
+.buying-window-rating .stars {
+  color: var(--hw-orange) !important;
+}
+
+.buying-window-price {
+  color: var(--hw-orange-hot) !important;
+  font-family: var(--font-hw-display) !important;
+  font-size: 2rem !important;
+}
+
+.buying-window-discount {
+  background: var(--hw-yellow) !important;
+  color: var(--hw-blue-dark) !important;
+}
+
+.fit-guide-link {
+  color: var(--hw-blue) !important;
+}
+
+.bw-size-btn {
+  background: var(--hw-ice) !important;
+  border: 2px solid #bfdbfe !important;
+  color: var(--hw-blue-dark) !important;
+}
+
+.bw-size-btn.active {
+  background: var(--hw-blue) !important;
+  border-color: var(--hw-blue-dark) !important;
+  color: #ffffff !important;
+}
+
+.bw-qty-box {
+  background: var(--hw-ice) !important;
+  border: 2px solid #bfdbfe !important;
+}
+
+.bw-qty-btn {
+  color: var(--hw-blue-dark) !important;
+}
+
+.bw-qty-box input {
+  color: var(--hw-ink) !important;
+}
+
+.bw-buy-now-btn {
+  background: var(--hw-blue) !important;
+  border-color: var(--hw-blue-dark) !important;
+  color: #ffffff !important;
+}
+
+.bw-buy-now-btn:hover {
+  background: var(--hw-blue-bright) !important;
+}
+
+.buying-window-perks {
+  border-top-color: #e2e8f0 !important;
+}
+
+/* Cart Drawer */
+.cart-drawer__header {
+  background: var(--hw-blue) !important;
+  color: #ffffff !important;
+  border-bottom: 3px solid var(--hw-orange) !important;
+}
+
+.cart-drawer__count-badge {
+  background: var(--hw-orange) !important;
+  color: #ffffff !important;
+}
+
+.cart-drawer__shipping-bar {
+  background: #fff7ed !important;
+  border-bottom: 2px solid #fed7aa !important;
+}
+
+.shipping-bar__text {
+  color: var(--hw-ink) !important;
+}
+
+.shipping-bar__track {
+  background: #fed7aa !important;
+}
+
+.shipping-bar__fill {
+  background: linear-gradient(90deg, var(--hw-orange), var(--hw-orange-hot)) !important;
+}
+
+.drawer-cart-item {
+  background: var(--hw-ice) !important;
+  border: 1.5px solid #bfdbfe !important;
+}
+
+.drawer-item-title {
+  color: var(--hw-ink) !important;
+}
+
+.drawer-item-price {
+  color: var(--hw-orange-hot) !important;
+}
+
+.drawer-qty-btn {
+  background: var(--hw-blue) !important;
+  color: #ffffff !important;
+}
+
+.cart-drawer__footer {
+  background: #ffffff !important;
+  border-top: 2px solid #dbeafe !important;
+}
+
+.cart-drawer__perks {
+  color: var(--hw-blue-dark) !important;
+}
+
+.btn--checkout {
+  background: linear-gradient(180deg, #ff7b00 0%, #ff4500 100%) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--hw-yellow) !important;
+  border-radius: 10px !important;
+}
+
+/* Login Modal */
+.login-brand-logo {
+  background: var(--hw-blue);
+  padding: 6px 12px;
+  border-radius: 10px;
+}
+
+.login-tabs {
+  background: var(--hw-ice) !important;
+  border-color: #bfdbfe !important;
+}
+
+.login-tab-btn {
+  color: var(--hw-blue-dark) !important;
+}
+
+.login-tab-btn.active {
+  background: var(--hw-blue) !important;
+  color: #ffffff !important;
+}
+
+.form-input {
+  background: var(--hw-ice) !important;
+  border: 1.5px solid #bfdbfe !important;
+  color: var(--hw-ink) !important;
+}
+
+.form-input:focus {
+  border-color: var(--hw-orange) !important;
+}
+
+.vimi-toast {
+  background: var(--hw-blue-dark) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--hw-orange) !important;
+}
