@@ -588,6 +588,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * Global Toast Helper
  */
 window.showVimiToast = function(message) {
+  const d=document.getElementById('CartDrawer'); if(d&&d.classList.contains('is-open')) return;
   let toast = document.getElementById('VimiToast');
   if (!toast) {
     toast = document.createElement('div');

@@ -1938,7 +1938,7 @@
         <div class="cart-drawer__perks"><span>✓ Mint Card Corrugated Box</span><span>✓ Cash on Delivery (COD)</span></div>
         <div class="cart-drawer__subtotal-row"><span>Subtotal</span><span class="cart-drawer__subtotal-price" id="CartDrawerSubtotal">₹0</span></div>
         <p class="cart-drawer__taxes-note">GST included. Shipping calculated at checkout.</p>
-        <button type="button" class="btn--checkout" onclick="window.showVimiToast('🚀 Proceeding to Secure Checkout (UPI / Cards / COD)!');">
+        <button type="button" class="btn--checkout" onclick="var b=this,s=b.querySelector('span');s.textContent='✓ REDIRECTING TO CHECKOUT • ';setTimeout(function(){s.textContent='PROCEED TO CHECKOUT • ';},1800);">
           <span>PROCEED TO CHECKOUT • </span><span id="CartDrawerCheckoutTotal">₹0</span>
         </button>
       </div>
