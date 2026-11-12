@@ -1,0 +1,78 @@
+{%- comment -%}
+  WHEEL&WONDER — Dedicated Hot Wheels Quick Buying Window Modal
+{%- endcomment -%}
+
+<div id="BuyingWindowModal" class="buying-window-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Quick Buy Window">
+  <div class="buying-window-overlay" data-buying-window-close></div>
+  <div class="buying-window-container">
+    <button type="button" class="buying-window-close" data-buying-window-close aria-label="Close window">
+      {% render 'icon-close' %}
+    </button>
+
+    <div class="buying-window-body">
+      <!-- Left: Product Image -->
+      <div class="buying-window-media">
+        <div class="buying-window-badge" id="BuyingWindowBadge">THEN &amp; NOW</div>
+        <img src="{{ 'hw-car-02.jpg' | asset_url }}" alt="Hot Wheels 1:64 Die-Cast" id="BuyingWindowImage" class="buying-window-img" onload="vimiImgLoaded(this);" onerror="this.src='./assets/hw-car-02.jpg'; vimiImgLoaded(this);">
+      </div>
+
+      <!-- Right: Product Purchase Details -->
+      <div class="buying-window-info">
+        <div class="buying-window-brand">
+          <img src="{{ 'wheel-wonder-logo.png' | asset_url }}" alt="Wheel&Wonder" class="buying-window-logo" onerror="this.src='./assets/wheel-wonder-logo.png';">
+          <span>OFFICIAL MATTEL 1:64 • DIE-CAST METAL</span>
+        </div>
+
+        <h2 class="buying-window-title" id="BuyingWindowTitle">Hot Wheels Toyota Supra (MK4 A80)</h2>
+
+        <div class="buying-window-rating">
+          <div class="stars">★★★★★</div>
+          <span id="BuyingWindowReviews">4.9 (180+ verified collector reviews)</span>
+        </div>
+
+        <div class="buying-window-price-row">
+          <span class="buying-window-price" id="BuyingWindowPrice">₹179</span>
+          <span class="buying-window-compare" id="BuyingWindowCompare" style="display:none;">₹179</span>
+          <span class="buying-window-discount" id="BuyingWindowDiscount">FLAT ₹179 MRP • SEALED</span>
+        </div>
+        <p class="buying-window-tax-note">Free Delivery &gt; ₹499 • 1 Free Car &gt; ₹999 • 2 Free Cars &gt; ₹1,499</p>
+
+        <!-- Card / Packaging Preference -->
+        <div class="buying-window-option">
+          <div class="option-header">
+            <label class="option-label">Select Blister Card Preference (Same ₹179 MRP):</label>
+            <span class="fit-guide-link" onclick="alert('WHEEL&WONDER COLLECTOR PACKAGING:\n\n• Long Card: Standard US/International tall blister card.\n• Short Card: Compact mainline card.\n• Protector Ready: Hand-picked zero-crease corners shipped in double-wall corrugated armor.');">📦 Mint Card Guide</span>
+          </div>
+          <div class="buying-window-sizes" id="BuyingWindowSizes">
+            <button type="button" class="bw-size-btn active" data-size="Long Card">Long Card</button>
+            <button type="button" class="bw-size-btn" data-size="Short Card">Short Card</button>
+            <button type="button" class="bw-size-btn" data-size="Protector Ready">Mint Pick</button>
+          </div>
+        </div>
+
+        <!-- Quantity & Actions -->
+        <div class="buying-window-actions">
+          <div class="bw-qty-box">
+            <button type="button" class="bw-qty-btn" id="BwQtyMinus">−</button>
+            <input type="number" id="BwQtyInput" value="1" min="1" max="10" readonly>
+            <button type="button" class="bw-qty-btn" id="BwQtyPlus">+</button>
+          </div>
+          <button type="button" class="btn btn--primary bw-add-btn" id="BwAddBagBtn">
+            <span>ADD TO GARAGE BAG</span>
+          </button>
+        </div>
+
+        <button type="button" class="btn btn--full bw-buy-now-btn" id="BwBuyNowBtn">
+          <span>⚡ INSTANT CHECKOUT (COD / UPI / CARDS)</span>
+        </button>
+
+        <!-- Trust Features -->
+        <div class="buying-window-perks">
+          <div class="bw-perk"><span>📦</span> <span>Bubble-Wrapped Corrugated Box (No Bent Cards)</span></div>
+          <div class="bw-perk"><span>💵</span> <span>Cash on Delivery (COD) & UPI Supported</span></div>
+          <div class="bw-perk"><span>✅</span> <span>100% Genuine Mattel Hot Wheels (Age 3+)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

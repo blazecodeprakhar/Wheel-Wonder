@@ -1,0 +1,54 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "WHEEL&WONDER - Hot Wheels Store",
+    "theme_version": "2.0.0",
+    "theme_author": "WHEEL&WONDER",
+    "theme_documentation_url": "https://wheelandwonder.in/docs",
+    "theme_support_url": "https://wheelandwonder.in/support"
+  },
+  {
+    "name": "Colors & Aesthetics",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "Background Color",
+        "default": "#050505"
+      },
+      {
+        "type": "color",
+        "id": "color_card_bg",
+        "label": "Card Background",
+        "default": "#0d0d0d"
+      },
+      {
+        "type": "color",
+        "id": "color_primary_text",
+        "label": "Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent Color (Highlight)",
+        "default": "#f59e0b"
+      }
+    ]
+  },
+  {
+    "name": "Brand & Social",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
+      {
+        "type": "text",
+        "id": "instagram_url",
+        "label": "Instagram Profile URL"
+      }
+    ]
+  }
+]

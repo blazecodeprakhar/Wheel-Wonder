@@ -1,0 +1,314 @@
+<section class="section-featured-collection" id="featured-cars">
+  <div class="container">
+    
+    <div class="section-header">
+      <div class="section-header__tag">
+        <span>OFFICIAL 1:64 MAINLINE VAULT • ALL CARS ₹179 MRP</span>
+      </div>
+      <div class="section-header__row">
+        <h2 class="section-title">{{ section.settings.title | default: "HOT WHEELS VAULT 2026" }}</h2>
+        <p class="section-subtitle">
+          {{ section.settings.subtitle | default: "23 iconic 1:64 scale die-cast castings across JDM, Exotics, American Muscle & Track Legends. Factory-sealed blister cards — every car flat ₹179." }}
+        </p>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="collection-filter-tabs">
+        <button type="button" class="filter-tab active" data-filter="all">All Cars (23 Castings)</button>
+        <button type="button" class="filter-tab" data-filter="jdm">JDM &amp; Imports</button>
+        <button type="button" class="filter-tab" data-filter="exotics">Exotics &amp; Supercars</button>
+        <button type="button" class="filter-tab" data-filter="muscle">American Muscle</button>
+        <button type="button" class="filter-tab" data-filter="track">Track Stars &amp; Legends</button>
+      </div>
+    </div>
+
+    <!-- Product Grid Featuring ALL 24 Hot Wheels Cars (Every Car ₹179) -->
+    <div class="products-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width: 100%;">
+      {%- assign collection = collections[section.settings.collection] -%}
+
+      {%- if collection != blank and collection.products.size > 0 -%}
+        {%- for product in collection.products limit: section.settings.products_to_show -%}
+          {% render 'product-card', product: product %}
+        {%- endfor -%}
+      {%- else -%}
+
+        <!-- 02 -->
+        {% render 'product-card',
+          demo_id: 'hw-02', demo_order: 2, demo_category: 'jdm',
+          demo_title: 'Hot Wheels Toyota Supra (MK4 A80)',
+          demo_series: 'Then & Now',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'JDM GRAIL',
+          demo_image: 'hw-car-02.jpg'
+        %}
+
+        <!-- 03 -->
+        {% render 'product-card',
+          demo_id: 'hw-03', demo_order: 3, demo_category: 'jdm',
+          demo_title: "Hot Wheels '99 Honda Civic Type R (EK9)",
+          demo_series: 'HW J-Imports',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'VTEC LEGEND',
+          demo_image: 'hw-car-03.jpg'
+        %}
+
+        <!-- 04 -->
+        {% render 'product-card',
+          demo_id: 'hw-04', demo_order: 4, demo_category: 'jdm',
+          demo_title: 'Hot Wheels Mazda RX-7 (FD3S)',
+          demo_series: 'HW Drift',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'ROTARY DRIFT',
+          demo_image: 'hw-car-04.jpg'
+        %}
+
+        <!-- 05 -->
+        {% render 'product-card',
+          demo_id: 'hw-05', demo_order: 5, demo_category: 'jdm',
+          demo_title: 'Hot Wheels Custom Datsun 240Z (#23)',
+          demo_series: 'Nightburnerz',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'CLASSIC JDM',
+          demo_image: 'hw-car-05.jpg'
+        %}
+
+        <!-- 06 -->
+        {% render 'product-card',
+          demo_id: 'hw-06', demo_order: 6, demo_category: 'jdm',
+          demo_title: 'Hot Wheels Subaru WRX STI Rally',
+          demo_series: 'HW Turbo',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'AWD TURBO',
+          demo_image: 'hw-car-06.jpg'
+        %}
+
+        <!-- 07 -->
+        {% render 'product-card',
+          demo_id: 'hw-07', demo_order: 7, demo_category: 'exotics',
+          demo_title: 'Hot Wheels Porsche 911 GT3 (992)',
+          demo_series: 'HW Exotics',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'HW EXOTICS',
+          demo_image: 'hw-car-07.jpg'
+        %}
+
+        <!-- 08 -->
+        {% render 'product-card',
+          demo_id: 'hw-08', demo_order: 8, demo_category: 'exotics',
+          demo_title: 'Hot Wheels Lamborghini Huracán LP 610-4',
+          demo_series: 'HW Exotics',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'V10 EXOTIC',
+          demo_image: 'hw-car-08.jpg'
+        %}
+
+        <!-- 09 -->
+        {% render 'product-card',
+          demo_id: 'hw-09', demo_order: 9, demo_category: 'exotics',
+          demo_title: 'Hot Wheels McLaren P1 Hypercar',
+          demo_series: 'HW Exotics',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'HYPERCAR',
+          demo_image: 'hw-car-09.jpg'
+        %}
+
+        <!-- 10 -->
+        {% render 'product-card',
+          demo_id: 'hw-10', demo_order: 10, demo_category: 'exotics',
+          demo_title: 'Hot Wheels Koenigsegg Jesko Absolut',
+          demo_series: 'HW Exotics',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'SPEED KING',
+          demo_image: 'hw-car-10.jpg'
+        %}
+
+        <!-- 11 -->
+        {% render 'product-card',
+          demo_id: 'hw-11', demo_order: 11, demo_category: 'exotics',
+          demo_title: "Hot Wheels '16 Bugatti Chiron",
+          demo_series: 'HW Exotics',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'W16 QUAD',
+          demo_image: 'hw-car-11.jpg'
+        %}
+
+        <!-- 12 -->
+        {% render 'product-card',
+          demo_id: 'hw-12', demo_order: 12, demo_category: 'exotics',
+          demo_title: 'Hot Wheels Pagani Zonda R Track',
+          demo_series: 'HW Race Day',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'CARBON TRACK',
+          demo_image: 'hw-car-12.jpg'
+        %}
+
+        <!-- 13 -->
+        {% render 'product-card',
+          demo_id: 'hw-13', demo_order: 13, demo_category: 'muscle',
+          demo_title: "Hot Wheels '69 Ford Mustang Boss 302",
+          demo_series: 'Muscle Mania',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'MUSCLE MANIA',
+          demo_image: 'hw-car-13.jpg'
+        %}
+
+        <!-- 14 -->
+        {% render 'product-card',
+          demo_id: 'hw-14', demo_order: 14, demo_category: 'muscle',
+          demo_title: "Hot Wheels '70 Dodge Charger R/T",
+          demo_series: 'Muscle Mania',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'HEMI BLOWER',
+          demo_image: 'hw-car-14.jpg'
+        %}
+
+        <!-- 15 -->
+        {% render 'product-card',
+          demo_id: 'hw-15', demo_order: 15, demo_category: 'muscle',
+          demo_title: "Hot Wheels '69 Chevy Camaro SS",
+          demo_series: 'Muscle Mania',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'CLASSIC SS',
+          demo_image: 'hw-car-15.jpg'
+        %}
+
+        <!-- 16 -->
+        {% render 'product-card',
+          demo_id: 'hw-16', demo_order: 16, demo_category: 'muscle',
+          demo_title: 'Hot Wheels Corvette C8.R Race Car',
+          demo_series: 'HW Race Day',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'GT RACING',
+          demo_image: 'hw-car-16.jpg'
+        %}
+
+        <!-- 17 -->
+        {% render 'product-card',
+          demo_id: 'hw-17', demo_order: 17, demo_category: 'muscle',
+          demo_title: "Hot Wheels '70 Plymouth Barracuda 426",
+          demo_series: 'Muscle Mania',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: '426 HEMI',
+          demo_image: 'hw-car-17.jpg'
+        %}
+
+        <!-- 18 -->
+        {% render 'product-card',
+          demo_id: 'hw-18', demo_order: 18, demo_category: 'muscle',
+          demo_title: 'Hot Wheels Ford GT40 Le Mans (#59)',
+          demo_series: 'HW Race Day',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'LE MANS ICON',
+          demo_image: 'hw-car-18.jpg'
+        %}
+
+        <!-- 19 -->
+        {% render 'product-card',
+          demo_id: 'hw-19', demo_order: 19, demo_category: 'track',
+          demo_title: 'Hot Wheels Twin Mill (Original Legend)',
+          demo_series: 'HW Track Stars',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'HW ORIGINAL',
+          demo_image: 'hw-car-19.jpg'
+        %}
+
+        <!-- 20 -->
+        {% render 'product-card',
+          demo_id: 'hw-20', demo_order: 20, demo_category: 'track',
+          demo_title: 'Hot Wheels Bone Shaker Skull Rod',
+          demo_series: 'Rod Squad',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'FAN FAVORITE',
+          demo_image: 'hw-car-20.jpg'
+        %}
+
+        <!-- 21 -->
+        {% render 'product-card',
+          demo_id: 'hw-21', demo_order: 21, demo_category: 'track',
+          demo_title: 'Hot Wheels Rodger Dodger Flame Edition',
+          demo_series: 'Track Stars',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'CLASSIC ROD',
+          demo_image: 'hw-car-21.jpg'
+        %}
+
+        <!-- 22 -->
+        {% render 'product-card',
+          demo_id: 'hw-22', demo_order: 22, demo_category: 'track',
+          demo_title: 'Hot Wheels Deora II World Race',
+          demo_series: 'HW Dream Garage',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'WORLD RACE',
+          demo_image: 'hw-car-22.jpg'
+        %}
+
+        <!-- 23 -->
+        {% render 'product-card',
+          demo_id: 'hw-23', demo_order: 23, demo_category: 'track',
+          demo_title: 'Hot Wheels Batman Arkham Knight Batmobile',
+          demo_series: 'Batman Series',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'BATMAN',
+          demo_image: 'hw-car-23.jpg'
+        %}
+
+        <!-- 24 -->
+        {% render 'product-card',
+          demo_id: 'hw-24', demo_order: 24, demo_category: 'track',
+          demo_title: 'Hot Wheels Mazda 787B Prototype',
+          demo_series: 'HW Race Day',
+          demo_price: 17900, demo_compare: 0,
+          demo_badge: 'ENDURANCE',
+          demo_image: 'hw-car-24.jpg'
+        %}
+
+      {%- endif -%}
+    </div>
+
+    <!-- Collection bottom CTA -->
+    <div class="collection-footer-cta">
+      <p class="bottom-guarantee">📦 <strong>All 23 Hot Wheels cars are flat ₹179 MRP and packed in 5-ply corrugated collector boxes</strong></p>
+      <a href="#hero-banner" class="btn btn--outline">Back to Top ↑</a>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "HOT WHEELS VAULT 2026"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "24 iconic 1:64 scale die-cast castings across JDM, Exotics, American Muscle & Track Legends. Every car flat ₹179."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 4,
+      "max": 32,
+      "step": 4,
+      "default": 24,
+      "label": "Maximum products to show"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection"
+    }
+  ]
+}
+{% endschema %}

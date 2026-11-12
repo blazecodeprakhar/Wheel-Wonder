@@ -1,0 +1,53 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "heading": "1:64 DIECAST LEGENDS. FLAT ₹179.",
+        "description": "India's dedicated Hot Wheels & 1:64 die-cast toy store. Factory-sealed blister cards across JDM, Exotics, Muscle & Track Stars — every single car at ₹179 MRP."
+      }
+    },
+    "countdown": {
+      "type": "countdown-ticker",
+      "settings": {}
+    },
+    "features": {
+      "type": "features-banner",
+      "settings": {}
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "HOT WHEELS VAULT 2026",
+        "subtitle": "23 iconic 1:64 scale die-cast castings across JDM, Exotics, American Muscle & Track Legends. Every car flat ₹179.",
+        "products_to_show": 23
+      }
+    },
+    "anatomy": {
+      "type": "diecast-anatomy",
+      "settings": {}
+    },
+    "fit_finder": {
+      "type": "collector-finder",
+      "settings": {}
+    },
+    "fabric_matrix": {
+      "type": "diecast-matrix",
+      "settings": {}
+    },
+    "brand_story": {
+      "type": "brand-story",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "countdown",
+    "features",
+    "featured_collection",
+    "anatomy",
+    "fit_finder",
+    "fabric_matrix",
+    "brand_story"
+  ]
+}

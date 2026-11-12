@@ -1,0 +1,115 @@
+{%- comment -%}
+  WHEEL&WONDER Collector Club & Login Modal (Classic Accounts)
+{%- endcomment -%}
+
+<div id="LoginModal" class="login-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Customer Login">
+  <div class="login-modal-overlay" data-login-close></div>
+  <div class="login-modal-dialog">
+    <button type="button" class="login-modal-close" data-login-close aria-label="Close login">
+      {% render 'icon-close' %}
+    </button>
+
+    <div class="login-modal-content">
+      <div class="login-header text-center">
+        <img src="{{ 'wheel-wonder-logo.png' | asset_url }}" alt="Wheel&Wonder" class="login-brand-logo" onerror="this.src='./assets/wheel-wonder-logo.png';">
+        <h3 class="login-title">WHEEL&WONDER CLUB</h3>
+        <p class="login-subtitle">Sign in for fresh Hot Wheels case alerts, order tracking & fast checkout.</p>
+      </div>
+
+      <div class="login-tabs" id="LoginTabsNav">
+        <button type="button" class="login-tab-btn active" id="TabSignIn">SIGN IN</button>
+        <button type="button" class="login-tab-btn" id="TabRegister">CREATE ACCOUNT</button>
+      </div>
+
+      {% form 'customer_login', class: 'login-form', id: 'FormSignIn' %}
+        {%- if form.errors -%}
+          <div class="login-form-errors">
+            {{ form.errors | default_errors }}
+          </div>
+        {%- endif -%}
+
+        <div class="form-group">
+          <label for="CustomerEmail">Email Address</label>
+          <input type="email" name="customer[email]" id="CustomerEmail" autocomplete="email" autocorrect="off" autocapitalize="off" required class="form-input" placeholder="e.g. collector@domain.com">
+        </div>
+
+        <div class="form-group">
+          <div class="form-group-flex">
+            <label for="CustomerPassword">Password</label>
+            <button type="button" class="forgot-link" id="LinkForgotPassword">Forgot?</button>
+          </div>
+          <input type="password" name="customer[password]" id="CustomerPassword" autocomplete="current-password" required class="form-input" placeholder="••••••••">
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full login-submit-btn">
+          <span>SIGN IN TO WHEEL&WONDER</span>
+        </button>
+
+        <div class="login-perks-box">
+          <p>✓ Early ping on Case A–Q mainline restocks at ₹179</p>
+          <p>✓ Faster 1-click checkout with saved shipping addresses</p>
+        </div>
+      {% endform %}
+
+      {% form 'create_customer', class: 'login-form', id: 'FormRegister', style: 'display: none;' %}
+        {%- if form.errors -%}
+          <div class="login-form-errors">
+            {{ form.errors | default_errors }}
+          </div>
+        {%- endif -%}
+
+        <div class="form-group">
+          <label for="RegisterFirstName">First Name</label>
+          <input type="text" name="customer[first_name]" id="RegisterFirstName" autocomplete="given-name" required class="form-input" placeholder="First Name">
+        </div>
+
+        <div class="form-group">
+          <label for="RegisterLastName">Last Name</label>
+          <input type="text" name="customer[last_name]" id="RegisterLastName" autocomplete="family-name" required class="form-input" placeholder="Last Name">
+        </div>
+
+        <div class="form-group">
+          <label for="RegisterEmail">Email Address</label>
+          <input type="email" name="customer[email]" id="RegisterEmail" autocomplete="email" autocorrect="off" autocapitalize="off" required class="form-input" placeholder="collector@domain.com">
+        </div>
+
+        <div class="form-group">
+          <label for="RegisterPassword">Create Password</label>
+          <input type="password" name="customer[password]" id="RegisterPassword" autocomplete="new-password" required class="form-input" placeholder="At least 6 characters">
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full login-submit-btn">
+          <span>JOIN WHEEL&WONDER CLUB</span>
+        </button>
+
+        <div class="login-perks-box">
+          <p>✓ Instant alerts on JDM, Exotics & Treasure Hunt drops</p>
+          <p>✓ Mint-card guaranteed pan-India courier tracking</p>
+        </div>
+      {% endform %}
+
+      {% form 'recover_customer_password', class: 'login-form', id: 'FormRecover', style: 'display: none;' %}
+        {%- if form.errors -%}
+          <div class="login-form-errors">
+            {{ form.errors | default_errors }}
+          </div>
+        {%- endif -%}
+
+        <p class="recover-instruction-text">Enter your registered email address below. We'll send you a link to reset your password.</p>
+
+        <div class="form-group">
+          <label for="RecoverEmail">Registered Email</label>
+          <input type="email" name="email" id="RecoverEmail" autocomplete="email" autocorrect="off" autocapitalize="off" required class="form-input" placeholder="collector@domain.com">
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full login-submit-btn">
+          <span>SEND PASSWORD RESET LINK</span>
+        </button>
+
+        <button type="button" class="btn-cancel-recover" id="CancelRecover">
+          ← Back to Sign In
+        </button>
+      {% endform %}
+    </div>
+  </div>
+</div>

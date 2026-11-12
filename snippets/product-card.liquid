@@ -1,0 +1,129 @@
+{%- comment -%}
+  WHEEL&WONDER — Hot Wheels 1:64 Die-Cast Product Card
+{%- endcomment -%}
+
+{%- liquid
+  assign is_real = false
+  if product and product.title != blank
+    assign is_real = true
+    assign card_title = product.title
+    assign card_url = product.url
+    assign card_image = product.featured_image
+    assign card_price = product.price
+    assign card_compare = product.compare_at_price | default: 0
+    assign card_badge = product.type | default: '1:64 DIECAST'
+    assign card_series = product.vendor | default: 'Hot Wheels Mainline'
+    assign card_cat = product.tags | join: ' ' | downcase
+  else
+    assign card_title = demo_title | default: "Hot Wheels Toyota Supra (MK4 A80)"
+    assign card_url = '#buying-window'
+    assign card_price = demo_price | default: 17900
+    assign card_compare = demo_compare | default: 0
+    assign card_badge = demo_badge | default: 'J-IMPORTS'
+    assign card_series = demo_series | default: '1:64 Die-Cast'
+    assign card_cat = demo_category | default: 'jdm'
+    assign demo_img = demo_image | default: 'hw-car-02.jpg'
+  endif
+-%}
+
+<div class="product-card" data-product-id="{{ product.id | default: demo_id | default: 'hw-demo' }}" data-category="{{ card_cat }}" data-order="{{ demo_order | default: 0 }}">
+  <div class="product-card__media-wrapper">
+    {%- if card_badge != blank -%}
+      <span class="product-card__badge">{{ card_badge }}</span>
+    {%- endif -%}
+
+    <a 
+      href="{{ card_url }}" 
+      class="product-card__link open-buying-window"
+      data-product-title="{{ card_title | escape }}"
+      data-product-price="{{ card_price }}"
+      data-product-compare="{{ card_compare }}"
+      data-product-badge="{{ card_badge }}"
+      data-product-image="{{ demo_img | default: 'hw-car-02.jpg' }}"
+    >
+      {%- if is_real and card_image -%}
+        <img
+          src="{{ card_image | image_url: width: 700 }}"
+          alt="{{ card_image.alt | default: card_title | escape }}"
+          loading="lazy"
+          class="product-card__image"
+          onload="vimiImgLoaded(this);"
+          onerror="vimiImgLoaded(this);"
+          width="680"
+          height="510"
+        >
+      {%- else -%}
+        <img
+          src="{{ demo_img | asset_url }}"
+          alt="{{ card_title | escape }}"
+          loading="lazy"
+          class="product-card__image"
+          onload="vimiImgLoaded(this);"
+          onerror="this.src='./assets/{{ demo_img }}'; vimiImgLoaded(this);"
+          width="680"
+          height="510"
+        >
+      {%- endif -%}
+    </a>
+
+    <!-- Quick action buttons overlay -->
+    <div class="product-card__actions">
+      <button 
+        type="button" 
+        class="btn-quick-buy open-buying-window"
+        data-product-title="{{ card_title | escape }}"
+        data-product-price="{{ card_price }}"
+        data-product-compare="{{ card_compare }}"
+        data-product-badge="{{ card_badge }}"
+        data-product-image="{{ demo_img | default: 'hw-car-02.jpg' }}"
+      >
+        <span>⚡ Quick Buy</span>
+      </button>
+
+      <button 
+        type="button" 
+        class="btn-quick-add" 
+        data-product-title="{{ card_title | escape }}" 
+        data-product-price="{{ card_price }}"
+        data-product-image="{{ demo_img | default: 'hw-car-02.jpg' }}"
+        data-product-id="{{ product.selected_or_first_available_variant.id | default: demo_id | default: 'hw-demo' }}"
+      >
+        <span>+ Add to Bag</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="product-card__info">
+    <div class="product-card__meta">
+      <div class="product-card__rating">
+        {% render 'icon-star' %}
+        <span>4.9 (140+)</span>
+      </div>
+      <span class="product-card__fit-tag">{{ card_series }}</span>
+    </div>
+
+    <h3 class="product-card__title">
+      <a 
+        href="{{ card_url }}" 
+        class="open-buying-window"
+        data-product-title="{{ card_title | escape }}"
+        data-product-price="{{ card_price }}"
+        data-product-compare="{{ card_compare }}"
+        data-product-badge="{{ card_badge }}"
+        data-product-image="{{ demo_img | default: 'hw-car-02.jpg' }}"
+      >
+        {{ card_title }}
+      </a>
+    </h3>
+
+    <div class="product-card__sizes">
+      <span class="size-pill active">1:64</span>
+      <span class="size-pill">METAL</span>
+      <span class="size-pill">SEALED</span>
+    </div>
+
+    <div class="product-card__bottom">
+      {% render 'price', product: product, price: card_price, compare_at_price: card_compare %}
+    </div>
+  </div>
+</div>

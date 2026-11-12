@@ -1,0 +1,12 @@
+# Shopify theme archive (upload to Shopify Admin > Online Store > Themes)
+*.zip
+
+# Python helper scripts & temporary files
+*.py
+__pycache__/
+scratch/
+
+# OS & Environment
+.DS_Store
+Thumbs.db
+.gemini/

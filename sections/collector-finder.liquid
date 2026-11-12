@@ -1,0 +1,55 @@
+<section class="section-fit-finder" id="fit-finder">
+  <div class="container">
+    <div class="fit-finder-box">
+      <h2 class="fit-finder-title">HOT WHEELS COLLECTOR PACK FINDER</h2>
+      <p class="fit-finder-sub">Every car is flat ₹179. Free Delivery over ₹499 • 1 Free Car above ₹999 • 2 Free Cars above ₹1,499!</p>
+
+      <div class="fit-inputs-row">
+        <div>
+          <label class="fit-label">Favorite Segment:</label>
+          <select id="PackStyle" class="fit-select">
+            <option value="jdm" selected>JDM &amp; Street Tuners (Supra, Civic, RX-7)</option>
+            <option value="exotics">Euro Exotics &amp; Hypercars (Porsche, Bugatti, Jesko)</option>
+            <option value="muscle">American Muscle (Mustang, Charger, Camaro)</option>
+            <option value="track">Track Stars &amp; Pop Culture (Twin Mill, Batmobile)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="fit-label">Cars in Your Order:</label>
+          <select id="PackCount" class="fit-select">
+            <option value="3">3-Car Starter Pack (₹537)</option>
+            <option value="6" selected>6-Car Free Shipping Pack (₹1,074)</option>
+            <option value="10">10-Car Shelf Display Set (₹1,790)</option>
+            <option value="12">12-Car Collector Box (₹2,148)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="fit-label">How You Collect:</label>
+          <select id="PackUsage" class="fit-select">
+            <option value="carded" selected>Keep Carded (Mint Blister Wall)</option>
+            <option value="track">Open &amp; Race on Orange Tracks</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="fit-result-badge" id="PackResultBadge">
+        🏁 Recommended: <strong>6-Car JDM Bundle — ₹1,074</strong> (6 × ₹179) • Free Delivery + 1 FREE Car Unlocked!<br><span style="font-size:0.8rem;font-weight:500;">Top Picks: Toyota Supra MK4, Civic Type R EK9, Mazda RX-7 FD3S • Shipped in rigid corrugated armor with bubble wrap for mint blisters.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collector Pack Finder",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Collector Pack Finder"
+    }
+  ]
+}
+{% endschema %}
+
