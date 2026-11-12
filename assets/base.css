@@ -5565,3 +5565,277 @@ body.vimi-store {
     padding: 10px 10px 12px !important;
   }
 }
+
+
+/* ==========================================================================
+   REBUILT COLLECTOR MANIFESTO & EXTRA KINETIC WEBSITE ANIMATIONS
+   ========================================================================== */
+
+/* Text & Title Shimmer + Racing Entrance */
+@keyframes hwTextFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes hwFloatPill {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes hwCarIdleFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.section-title,
+.anatomy-title,
+.ww-manifesto-title {
+  background-size: 200% auto !important;
+  animation: hwTextFlow 5s ease-in-out infinite !important;
+}
+
+.crazzzy-pill,
+.m-pill.hot {
+  animation: hwFloatPill 2.8s ease-in-out infinite;
+}
+
+/* Arrow & Icon Micro-Animations on Button Hover */
+.btn svg,
+.btn-quick-buy span,
+.btn-quick-add span,
+.filter-tab {
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-quick-buy:hover,
+.btn-quick-add:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.feature-item:hover .feature-icon-box,
+.ww-promise-card:hover .ww-promise-icon,
+.anatomy-point:hover .point-index {
+  transform: scale(1.12) rotate(-6deg);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Rebuilt Clean Hot Wheels Collector Manifesto Section */
+.section-brand-story {
+  padding: 76px 0 !important;
+  background: linear-gradient(180deg, #ffffff 0%, #eef5ff 100%) !important;
+  border-bottom: 4px solid var(--hw-orange) !important;
+}
+
+.ww-manifesto-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.ww-manifesto-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff7ed;
+  border: 2px solid var(--hw-orange);
+  color: var(--hw-orange-hot);
+  font-family: var(--font-hw-tech);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.ww-manifesto-title {
+  font-family: var(--font-hw-display) !important;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, var(--hw-blue-dark) 0%, var(--hw-blue) 50%, var(--hw-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ww-manifesto-copy {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--hw-muted);
+  margin-bottom: 24px;
+  max-width: 560px;
+}
+
+.ww-manifesto-copy strong {
+  color: var(--hw-ink);
+}
+
+.ww-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.ww-stat-tile {
+  background: #ffffff;
+  border: 2px solid #bfdbfe;
+  border-top: 4px solid var(--hw-blue);
+  border-radius: 12px;
+  padding: 14px 12px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 43, 107, 0.06);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.2s;
+}
+
+.ww-stat-tile:hover {
+  transform: translateY(-4px);
+  border-color: var(--hw-orange);
+  border-top-color: var(--hw-orange);
+}
+
+.ww-stat-num {
+  display: block;
+  font-family: var(--font-hw-display);
+  font-size: 1.75rem;
+  line-height: 1.1;
+  color: var(--hw-orange-hot);
+  margin-bottom: 4px;
+}
+
+.ww-stat-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--hw-blue-dark);
+}
+
+.ww-manifesto-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ww-manifesto-actions .btn--outline {
+  border: 2px solid var(--hw-blue) !important;
+  color: var(--hw-blue-dark) !important;
+  background: #ffffff !important;
+  border-radius: 10px !important;
+  font-family: var(--font-hw-tech) !important;
+}
+
+.ww-manifesto-actions .btn--outline:hover {
+  background: var(--hw-blue) !important;
+  color: #ffffff !important;
+}
+
+/* Right Side: Clean 3-Card Collector Promise Stack */
+.ww-promise-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ww-promise-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-left: 6px solid var(--hw-blue);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 10px 24px rgba(0, 43, 107, 0.08);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.2s, box-shadow 0.2s;
+}
+
+.ww-promise-card:nth-child(2) {
+  border-left-color: var(--hw-orange);
+}
+
+.ww-promise-card:nth-child(3) {
+  border-left-color: var(--hw-yellow);
+}
+
+.ww-promise-card:hover {
+  transform: translateX(6px);
+  border-color: var(--hw-orange);
+  box-shadow: 0 14px 30px rgba(0, 59, 142, 0.14);
+}
+
+.ww-promise-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--hw-blue), var(--hw-blue-bright));
+  border: 2px solid var(--hw-yellow);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.ww-promise-card:nth-child(2) .ww-promise-icon {
+  background: linear-gradient(135deg, #ff6b00, #ff4500);
+}
+
+.ww-promise-card:nth-child(3) .ww-promise-icon {
+  background: linear-gradient(135deg, #ffd100, #ff8c00);
+  color: var(--hw-blue-dark);
+}
+
+.ww-promise-card h3 {
+  font-family: var(--font-hw-tech);
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--hw-ink);
+  margin-bottom: 4px;
+}
+
+.ww-promise-card p {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--hw-muted);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .ww-manifesto-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .section-brand-story {
+    padding: 52px 0 !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .ww-stats-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .ww-stat-tile {
+    padding: 10px 6px;
+  }
+  .ww-stat-num {
+    font-size: 1.3rem;
+  }
+  .ww-stat-label {
+    font-size: 0.65rem;
+  }
+  .ww-manifesto-actions {
+    flex-direction: column;
+  }
+  .ww-manifesto-actions .btn {
+    width: 100%;
+  }
+}

@@ -700,7 +700,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 2. Scroll-Reveal Animations
-  const revealEls = document.querySelectorAll('.product-card, .feature-item, .anatomy-point, .fit-finder-box, .story-card');
+  const revealEls = document.querySelectorAll('.product-card, .feature-item, .anatomy-point, .fit-finder-box, .ww-promise-card, .ww-stat-tile');
   if ('IntersectionObserver' in window && revealEls.length) {
     revealEls.forEach((el, idx) => {
       el.classList.add('hw-reveal');
