@@ -885,3 +885,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+/* ==========================================================================
+   POLICY MODAL CONTROLLER & INTERACTIVE NOTIFICATIONS
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const policyModal = document.getElementById('PolicyModal');
+  const policyTabs = document.querySelectorAll('.ww-policy-tab');
+  const policyPanes = document.querySelectorAll('.ww-policy-pane');
+
+  window.openPolicyModal = function(tabName) {
+    if (!policyModal) return;
+    const target = tabName || 'return';
+    policyTabs.forEach(t => t.classList.toggle('active', t.dataset.policyTab === target));
+    policyPanes.forEach(p => p.classList.toggle('active', p.dataset.policyPane === target));
+    policyModal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  function closePolicyModal() {
+    if (!policyModal) return;
+    policyModal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-policy-open]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.openPolicyModal(el.dataset.policyOpen);
+    });
+  });
+
+  document.querySelectorAll('[data-policy-close]').forEach(el => {
+    el.addEventListener('click', closePolicyModal);
+  });
+
+  policyTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      window.openPolicyModal(tab.dataset.policyTab);
+    });
+  });
+
+  // Card Preference toast inside Buying Window
+  document.querySelectorAll('.bw-size-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (window.showVimiToast) {
+        window.showVimiToast(`Selected "${btn.dataset.size}" packaging (Flat ₹179 MRP)`);
+      }
+    });
+  });
+});

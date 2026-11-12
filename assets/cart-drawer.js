@@ -116,11 +116,18 @@
           const idx = parseInt(e.currentTarget.dataset.index);
           if (action === 'increase') {
             demoCartItems[idx].quantity += 1;
+            if (window.showVimiToast) window.showVimiToast(`Updated "${demoCartItems[idx].title}" qty to ${demoCartItems[idx].quantity}`);
           } else if (action === 'decrease') {
             demoCartItems[idx].quantity -= 1;
-            if (demoCartItems[idx].quantity <= 0) demoCartItems.splice(idx, 1);
+            if (demoCartItems[idx].quantity <= 0) {
+              const rem = demoCartItems.splice(idx, 1)[0];
+              if (window.showVimiToast) window.showVimiToast(`Removed "${rem.title}" from Garage Bag`);
+            } else {
+              if (window.showVimiToast) window.showVimiToast(`Updated qty to ${demoCartItems[idx].quantity}`);
+            }
           } else if (action === 'remove') {
-            demoCartItems.splice(idx, 1);
+            const rem = demoCartItems.splice(idx, 1)[0];
+            if (window.showVimiToast) window.showVimiToast(`Removed "${rem.title}" from Garage Bag`);
           }
           const total = demoCartItems.reduce((sum, it) => sum + (it.price * it.quantity), 0);
           renderCart(demoCartItems, total);
@@ -140,7 +147,15 @@
     renderCart(demoCartItems, total);
     openCart();
     if (window.showVimiToast) {
-      window.showVimiToast(`Added "${title}" to your garage bag!`);
+      if (total >= TWO_FREE_CARS_THRESHOLD) {
+        window.showVimiToast(`🔥 MAX REWARD! Free Delivery + 2 FREE Cars unlocked (₹${total.toLocaleString('en-IN')})!`);
+      } else if (total >= ONE_FREE_CAR_THRESHOLD) {
+        window.showVimiToast(`🎁 1 FREE Hot Wheels Car + Free Delivery unlocked (₹${total.toLocaleString('en-IN')})!`);
+      } else if (total >= FREE_SHIPPING_THRESHOLD) {
+        window.showVimiToast(`🚚 FREE Delivery unlocked! Added "${title}" to Garage Bag.`);
+      } else {
+        window.showVimiToast(`Added "${title}" (₹179) to your Garage Bag!`);
+      }
     }
   }
 

@@ -157,6 +157,8 @@
           <li><a href="#featured-cars" onclick="document.querySelector('[data-filter=\'exotics\']')?.click();">Exotics &amp; Supercars</a></li>
           <li><a href="#featured-cars" onclick="document.querySelector('[data-filter=\'muscle\']')?.click();">Muscle &amp; Track Stars</a></li>
           <li><a href="#brand-story">Our Story</a></li>
+          <li><a href="#" data-policy-open="return">7-Day Return &amp; Damage Policy</a></li>
+          <li><a href="#" data-policy-open="terms">Terms &amp; Privacy Policy</a></li>
           <li><a href="#" class="mobile-login-link" id="MobileLoginLink">👤 Sign In / Create Account</a></li>
         </ul>
         <div class="mobile-nav-perks">
@@ -1750,13 +1752,13 @@
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-col__title">Collector Care</h4>
+          <h4 class="footer-col__title">Policies &amp; Care</h4>
           <ul class="footer-links">
-            <li><a href="#">Track Your Parcel</a></li>
-            <li><a href="#">Mint-Card Packing Policy</a></li>
-            <li><a href="#">Pan-India Shipping (Free ₹999+)</a></li>
-            <li><a href="#fit-finder">Bundle &amp; Pack Calculator</a></li>
-            <li><a href="#">FAQs &amp; BIS Safety</a></li>
+            <li><a href="#" data-policy-open="return">7-Day Return Policy</a></li>
+            <li><a href="#" data-policy-open="damage">Transit Damage Policy</a></li>
+            <li><a href="#" data-policy-open="shipping">Shipping &amp; Free Car Policy</a></li>
+            <li><a href="#" data-policy-open="terms">Terms &amp; Conditions</a></li>
+            <li><a href="#" data-policy-open="privacy">Privacy &amp; Payment Security</a></li>
           </ul>
         </div>
 
@@ -1769,6 +1771,14 @@
           </form>
           <div class="newsletter-trust">🔒 Zero spam. Unsubscribe anytime.</div>
         </div>
+      </div>
+
+      <div class="ww-footer-policies">
+        <button type="button" class="ww-policy-pill-link" data-policy-open="return">🔄 7-Day Return Policy</button>
+        <button type="button" class="ww-policy-pill-link" data-policy-open="damage">📦 Transit Damage &amp; Bent-Card Policy</button>
+        <button type="button" class="ww-policy-pill-link" data-policy-open="shipping">🚚 Shipping &amp; Reward Tiers</button>
+        <button type="button" class="ww-policy-pill-link" data-policy-open="terms">📜 Terms &amp; Conditions</button>
+        <button type="button" class="ww-policy-pill-link" data-policy-open="privacy">🔒 Privacy &amp; Refund Policy</button>
       </div>
 
       <div class="footer-bottom">
@@ -1821,10 +1831,7 @@
           <div class="buying-window-option">
             <div class="option-header">
               <label class="option-label">Select Blister Card Preference (Same ₹179 MRP):</label>
-              <span class="fit-guide-link" onclick="alert('WHEEL&WONDER PACKAGING:
-• Long Card: Classic tall blister
-• Short Card: Compact card
-• Mint Pick: Hand-picked crease-free corners.');">📦 Mint Card Guide</span>
+              <span class="fit-guide-link" data-policy-open="damage">📦 Mint Card &amp; Damage Policy</span>
             </div>
             <div class="buying-window-sizes" id="BuyingWindowSizes">
               <button type="button" class="bw-size-btn active" data-size="Long Card">Long Card</button>
@@ -1924,9 +1931,70 @@
         <div class="cart-drawer__perks"><span>✓ Mint Card Corrugated Box</span><span>✓ Cash on Delivery (COD)</span></div>
         <div class="cart-drawer__subtotal-row"><span>Subtotal</span><span class="cart-drawer__subtotal-price" id="CartDrawerSubtotal">₹0</span></div>
         <p class="cart-drawer__taxes-note">GST included. Shipping calculated at checkout.</p>
-        <button type="button" class="btn--checkout" onclick="alert('In your live Shopify store, clicking this takes the customer straight to Shopify Checkout (UPI / Cards / COD)!');">
+        <button type="button" class="btn--checkout" onclick="window.showVimiToast('🚀 Proceeding to Secure Checkout (UPI / Cards / COD)!');">
           <span>PROCEED TO CHECKOUT • </span><span id="CartDrawerCheckoutTotal">₹0</span>
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORE POLICIES & IMPORTANT DETAILS MODAL -->
+  <div id="PolicyModal" class="ww-policy-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Store Policies">
+    <div class="ww-policy-overlay" data-policy-close></div>
+    <div class="ww-policy-dialog">
+      <div class="ww-policy-header">
+        <h3>WHEEL&amp;WONDER — OFFICIAL STORE POLICIES</h3>
+        <button type="button" class="ww-policy-close" data-policy-close aria-label="Close policies">✕</button>
+      </div>
+      <div class="ww-policy-tabs">
+        <button type="button" class="ww-policy-tab active" data-policy-tab="return">7-Day Return Policy</button>
+        <button type="button" class="ww-policy-tab" data-policy-tab="damage">Damage &amp; Bent-Card Policy</button>
+        <button type="button" class="ww-policy-tab" data-policy-tab="shipping">Shipping &amp; Free Cars</button>
+        <button type="button" class="ww-policy-tab" data-policy-tab="terms">Terms &amp; Conditions</button>
+        <button type="button" class="ww-policy-tab" data-policy-tab="privacy">Privacy &amp; Refunds</button>
+      </div>
+      <div class="ww-policy-body">
+        <div class="ww-policy-pane active" data-policy-pane="return">
+          <h4>🔄 7-Day Easy Return &amp; Replacement Policy</h4>
+          <ul>
+            <li><strong>Eligibility:</strong> Returns or replacements are accepted within <strong>7 days of delivery</strong> if the wrong car was delivered or you received a defective casting.</li>
+            <li><strong>Condition:</strong> The Hot Wheels blister card must remain <strong>unopened, factory-sealed, and unused</strong> with original packaging intact.</li>
+            <li><strong>Pickup &amp; Resolution:</strong> Free doorstep reverse pickup is arranged across serviceable Indian pincodes. Refunds are credited within 3–5 business days (or instant store credit).</li>
+          </ul>
+        </div>
+        <div class="ww-policy-pane" data-policy-pane="damage">
+          <h4>📦 Transit Damage &amp; Bent-Card Protection Policy</h4>
+          <ul>
+            <li><strong>5-Ply Corrugated Armor:</strong> Every order is bubble-wrapped inside a rigid 5-ply box — we never ship Hot Wheels in flimsy poly-bags.</li>
+            <li><strong>48-Hour Unboxing Claim:</strong> If a blister card arrives cracked or crushed in transit, send a continuous <strong>unboxing video</strong> to <strong>support@wheelandwonder.in</strong> within 48 hours of delivery.</li>
+            <li><strong>100% Free Replacement / Refund:</strong> Verified transit damage qualifies for an immediate free replacement or full refund.</li>
+          </ul>
+        </div>
+        <div class="ww-policy-pane" data-policy-pane="shipping">
+          <h4>🚚 Pan-India Shipping &amp; 3-Tier Reward Policy</h4>
+          <ul>
+            <li><strong>Dispatch Time:</strong> Orders are packed and dispatched within <strong>24 hours</strong> (Mon–Sat) with live courier tracking.</li>
+            <li><strong>Order Over ₹499:</strong> <strong>FREE Pan-India Delivery</strong> unlocked automatically.</li>
+            <li><strong>Order Above ₹999:</strong> <strong>FREE Delivery + 1 FREE Factory-Sealed Hot Wheels Car</strong> included in your box!</li>
+            <li><strong>Order Above ₹1,499:</strong> <strong>FREE Delivery + 2 FREE Factory-Sealed Hot Wheels Cars</strong> included in your box!</li>
+          </ul>
+        </div>
+        <div class="ww-policy-pane" data-policy-pane="terms">
+          <h4>📜 Terms &amp; Conditions</h4>
+          <ul>
+            <li><strong>Pricing:</strong> All 1:64 Hot Wheels mainline castings are sold at flat <strong>₹179 Official Indian MRP</strong> (inclusive of GST).</li>
+            <li><strong>Authenticity &amp; Safety:</strong> 100% genuine Mattel products, BIS certified for India. Contains small parts — recommended for ages <strong>3+</strong>.</li>
+            <li><strong>Order Cancellation:</strong> Orders can be cancelled before dispatch by emailing <strong>support@wheelandwonder.in</strong>.</li>
+          </ul>
+        </div>
+        <div class="ww-policy-pane" data-policy-pane="privacy">
+          <h4>🔒 Privacy, Payment Security &amp; Refund Policy</h4>
+          <ul>
+            <li><strong>Secure Payments:</strong> 100% SSL-encrypted payments via UPI, GPay, PhonePe, Paytm, RuPay, Visa, Mastercard &amp; Cash on Delivery (COD).</li>
+            <li><strong>Zero Card Storage:</strong> We never store card or UPI PIN details. Your address &amp; phone are used strictly for order delivery &amp; tracking alerts.</li>
+            <li><strong>Support:</strong> Email <strong>support@wheelandwonder.in</strong> (Mon–Sat, 10 AM – 7 PM IST).</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

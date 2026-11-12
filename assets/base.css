@@ -5839,3 +5839,273 @@ body.vimi-store {
     width: 100%;
   }
 }
+
+
+/* ==========================================================================
+   PAYMENT ANIMATIONS, NOTIFICATIONS, POLICIES MODAL & MOBILE GLITCH FIXES
+   ========================================================================== */
+
+/* 1. Animated Payment Pills (PC & Phone) */
+@keyframes hwPayShimmer {
+  0% { background-position: -150% 0; }
+  100% { background-position: 250% 0; }
+}
+
+.payment-pill {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #002b6b 0%, #003b8e 100%) !important;
+  border: 1.5px solid rgba(255, 209, 0, 0.45) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.2s, box-shadow 0.2s !important;
+}
+
+.payment-pill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.22) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: hwPayShimmer 3.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.payment-pill:hover,
+.payment-pill:active {
+  transform: translateY(-3px) scale(1.05) !important;
+  border-color: var(--hw-orange) !important;
+  box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35) !important;
+}
+
+/* 2. High-Visibility Animated Toast Notification (PC & Phone) */
+.vimi-toast {
+  z-index: 999999 !important;
+  max-width: calc(100vw - 28px);
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0, 27, 68, 0.45) !important;
+}
+
+@media (max-width: 768px) {
+  .vimi-toast {
+    bottom: 88px !important;
+    font-size: 0.78rem !important;
+    padding: 10px 16px !important;
+  }
+  body.vimi-store {
+    padding-bottom: 84px !important;
+  }
+}
+
+/* 3. Store Policies & Trust Modal */
+.ww-policy-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.ww-policy-modal.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.ww-policy-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 18, 51, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.ww-policy-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  max-height: 88vh;
+  background: #ffffff;
+  border: 3px solid var(--hw-blue);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  box-shadow: 0 24px 60px rgba(0, 18, 51, 0.45);
+  transform: translateY(16px) scale(0.97);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ww-policy-modal.is-open .ww-policy-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.ww-policy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--hw-blue);
+  border-bottom: 3px solid var(--hw-orange);
+  color: #ffffff;
+}
+
+.ww-policy-header h3 {
+  font-family: var(--font-hw-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.ww-policy-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+  background: var(--hw-orange);
+  color: #ffffff;
+  font-weight: 800;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.ww-policy-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #eef5ff;
+  border-bottom: 1.5px solid #bfdbfe;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.ww-policy-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.ww-policy-tab {
+  flex: 0 0 auto;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1.5px solid #bfdbfe;
+  background: #ffffff;
+  color: var(--hw-blue-dark);
+  font-family: var(--font-hw-tech);
+  font-size: 0.76rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ww-policy-tab.active {
+  background: var(--hw-orange);
+  border-color: var(--hw-orange-hot);
+  color: #ffffff;
+}
+
+.ww-policy-body {
+  padding: 20px 22px;
+  overflow-y: auto;
+  color: var(--hw-ink);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.ww-policy-pane {
+  display: none;
+}
+
+.ww-policy-pane.active {
+  display: block;
+}
+
+.ww-policy-pane h4 {
+  font-family: var(--font-hw-tech);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--hw-blue-dark);
+  margin-bottom: 10px;
+}
+
+.ww-policy-pane ul {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Footer Policy Quick Bar */
+.ww-footer-policies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 16px 0;
+  margin-bottom: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.ww-policy-pill-link {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #dbeafe !important;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ww-policy-pill-link:hover {
+  background: var(--hw-orange);
+  border-color: var(--hw-yellow);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* 4. MOBILE CARD GLITCH FIX: Actions sit cleanly BELOW the car photo (zero wheel overlap!) */
+@media (max-width: 768px) {
+  .product-card__media-wrapper {
+    aspect-ratio: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+  .product-card__image {
+    aspect-ratio: 4 / 3 !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+  .product-card__actions {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    opacity: 1 !important;
+    transform: none !important;
+    padding: 6px 8px 6px !important;
+    gap: 6px !important;
+    background: #eef5ff !important;
+    border-top: 1px solid #dbeafe !important;
+  }
+  .btn-quick-buy,
+  .btn-quick-add {
+    padding: 7px 4px !important;
+    font-size: 0.63rem !important;
+    min-height: 32px !important;
+  }
+  .product-card__meta {
+    gap: 6px !important;
+  }
+  .product-card__fit-tag {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
