@@ -5246,3 +5246,322 @@ body.vimi-store {
   color: #ffffff !important;
   border: 2px solid var(--hw-orange) !important;
 }
+
+
+/* ==========================================================================
+   WHEEL&WONDER — NITRO ANIMATIONS, NEW FEATURES & MOBILE PERFECTION
+   ========================================================================== */
+
+/* 1. Top Racing Scroll Progress Track */
+.hw-scroll-progress {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, #ffd100 0%, #ff6b00 50%, #ff3d00 100%);
+  box-shadow: 0 0 12px rgba(255, 107, 0, 0.8);
+  z-index: 99998;
+  transition: width 0.08s linear;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hw-scroll-progress {
+    top: 56px;
+  }
+}
+
+/* 2. Checkered Racing Flag Divider */
+.hw-checkered-strip {
+  height: 14px;
+  width: 100%;
+  background-image:
+    linear-gradient(45deg, #0b1e3d 25%, transparent 25%),
+    linear-gradient(-45deg, #0b1e3d 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #0b1e3d 75%),
+    linear-gradient(-45deg, transparent 75%, #0b1e3d 75%);
+  background-size: 14px 14px;
+  background-position: 0 0, 0 7px, 7px -7px, -7px 0;
+  background-color: #ffffff;
+  border-top: 2px solid var(--hw-orange);
+  border-bottom: 2px solid var(--hw-orange);
+}
+
+/* 3. High-Octane Button Animations (Nitro Sweep + 3D Tactile Press) */
+@keyframes hwNitroSweep {
+  0% { left: -120%; }
+  45%, 100% { left: 160%; }
+}
+
+@keyframes hwPulseGlow {
+  0%, 100% { box-shadow: 0 5px 0 #9a2400, 0 8px 20px rgba(255, 69, 0, 0.35); }
+  50% { box-shadow: 0 5px 0 #9a2400, 0 10px 28px rgba(255, 209, 0, 0.65); }
+}
+
+.btn--primary,
+.m-btn.primary,
+.btn--checkout,
+.hw-spin-btn {
+  position: relative !important;
+  overflow: hidden !important;
+  animation: hwPulseGlow 2.8s ease-in-out infinite;
+  transition: transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease !important;
+}
+
+.btn--primary::after,
+.m-btn.primary::after,
+.btn--checkout::after,
+.hw-spin-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: skewX(-22deg);
+  animation: hwNitroSweep 3.8s infinite;
+  pointer-events: none;
+}
+
+.btn:active,
+.m-btn:active,
+.btn-quick-buy:active,
+.btn-quick-add:active,
+.filter-tab:active,
+.hw-fav-btn:active {
+  transform: translateY(3px) scale(0.96) !important;
+}
+
+.btn--secondary:hover,
+.btn--outline:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* 4. Catalog Search, Spin & Sort Toolbar */
+.hw-catalog-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 2px solid #bfdbfe;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 59, 142, 0.08);
+}
+
+.hw-search-wrap {
+  position: relative;
+  flex: 1 1 260px;
+  min-width: 210px;
+}
+
+.hw-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--hw-blue);
+  pointer-events: none;
+}
+
+.hw-search-input {
+  width: 100%;
+  padding: 10px 14px 10px 38px;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: var(--hw-ink);
+  font-size: 0.86rem;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.hw-search-input:focus {
+  border-color: var(--hw-orange);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.18);
+}
+
+.hw-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hw-count-pill {
+  font-family: var(--font-hw-tech);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--hw-blue-dark);
+  background: #eef5ff;
+  border: 1.5px solid #bfdbfe;
+  padding: 8px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.hw-spin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: linear-gradient(135deg, #ff6b00 0%, #ff3d00 100%);
+  color: #ffffff;
+  border: 2px solid var(--hw-yellow);
+  border-radius: 10px;
+  padding: 9px 15px;
+  font-family: var(--font-hw-tech);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.hw-spin-btn.is-spinning {
+  animation: hwWheelSpin 0.45s linear infinite !important;
+}
+
+@keyframes hwWheelSpin {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.05) rotate(2deg); }
+  100% { transform: scale(1) rotate(-2deg); }
+}
+
+.hw-sort-select {
+  background: #f8fafc;
+  color: var(--hw-ink);
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+
+.hw-sort-select:focus {
+  border-color: var(--hw-blue);
+}
+
+/* 5. Favorite Heart Button on Product Cards */
+.hw-fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 8;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid #cbd5e1;
+  color: #64748b;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.14);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.hw-fav-btn:hover {
+  transform: scale(1.14);
+  border-color: var(--hw-orange);
+  color: #ef4444;
+}
+
+.hw-fav-btn.is-fav {
+  background: #ef4444;
+  border-color: #ffffff;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* 6. Scroll Reveal Entrance Animation */
+.hw-reveal {
+  opacity: 0;
+  transform: translateY(22px) scale(0.98);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hw-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Empty Filter State */
+.hw-empty-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 46px 20px;
+  background: #ffffff;
+  border: 2px dashed #93c5fd;
+  border-radius: 16px;
+  color: var(--hw-ink);
+}
+
+/* 7. MOBILE PERFECTION: Always-accessible Quick Actions & Clean Touch Targets */
+@media (max-width: 768px) {
+  .hw-catalog-controls {
+    padding: 12px;
+    gap: 10px;
+  }
+  .hw-search-wrap {
+    flex: 1 1 100%;
+  }
+  .hw-controls-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .hw-spin-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 10px;
+    font-size: 0.74rem;
+  }
+  .hw-sort-select {
+    flex: 1;
+    font-size: 0.76rem;
+    padding: 9px 8px;
+  }
+  .hw-count-pill {
+    display: none;
+  }
+
+  /* On touchscreens/phones, show Quick Buy & +Add cleanly at bottom of card image */
+  .product-card__actions {
+    position: absolute !important;
+    bottom: 6px !important;
+    left: 6px !important;
+    right: 6px !important;
+    opacity: 1 !important;
+    transform: none !important;
+    padding: 0 !important;
+    gap: 5px !important;
+    background: transparent !important;
+  }
+  .btn-quick-buy,
+  .btn-quick-add {
+    padding: 6px 4px !important;
+    font-size: 0.62rem !important;
+    min-height: 28px !important;
+    border-radius: 6px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  .hw-fav-btn {
+    width: 28px;
+    height: 28px;
+    top: 6px;
+    right: 6px;
+    font-size: 0.78rem;
+  }
+  .product-card__info {
+    padding: 10px 10px 12px !important;
+  }
+}

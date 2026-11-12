@@ -683,3 +683,205 @@ function initVimiGlobalImageLoader() {
 
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initVimiGlobalImageLoader);
 else initVimiGlobalImageLoader();
+
+
+/* ==========================================================================
+   WHEEL&WONDER — INTERACTIVE FEATURES, SEARCH, FAVORITES, SPIN & REVEAL
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Racing Scroll Progress Track
+  const scrollTrack = document.getElementById('hwScrollProgress');
+  if (scrollTrack) {
+    window.addEventListener('scroll', () => {
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docH > 0 ? Math.min(100, (window.scrollY / docH) * 100) : 0;
+      scrollTrack.style.width = `${pct.toFixed(1)}%`;
+    }, { passive: true });
+  }
+
+  // 2. Scroll-Reveal Animations
+  const revealEls = document.querySelectorAll('.product-card, .feature-item, .anatomy-point, .fit-finder-box, .story-card');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    revealEls.forEach((el, idx) => {
+      el.classList.add('hw-reveal');
+      el.style.transitionDelay = `${Math.min((idx % 4) * 55, 180)}ms`;
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  }
+
+  // 3. Favorites / Garage Wishlist
+  const FAV_KEY = 'ww_favorites_v1';
+  let favSet = new Set();
+  try {
+    favSet = new Set(JSON.parse(localStorage.getItem(FAV_KEY) || '[]'));
+  } catch (e) {}
+
+  function saveFavs() {
+    try { localStorage.setItem(FAV_KEY, JSON.stringify(Array.from(favSet))); } catch (e) {}
+  }
+
+  const favCountBadge = document.getElementById('hwFavCount');
+  function updateFavTabBadge() {
+    if (favCountBadge) favCountBadge.textContent = favSet.size;
+  }
+
+  document.querySelectorAll('.hw-fav-btn').forEach(btn => {
+    const pid = btn.dataset.pid;
+    if (favSet.has(pid)) btn.classList.add('is-fav');
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (favSet.has(pid)) {
+        favSet.delete(pid);
+        btn.classList.remove('is-fav');
+        if (window.showVimiToast) window.showVimiToast('Removed from Garage Favorites');
+      } else {
+        favSet.add(pid);
+        btn.classList.add('is-fav');
+        if (window.showVimiToast) window.showVimiToast('❤️ Saved to your Garage Favorites!');
+      }
+      saveFavs();
+      updateFavTabBadge();
+      applyCatalogFilters();
+    });
+  });
+  updateFavTabBadge();
+
+  // 4. Unified Search + Category + Favorites + Sort
+  const searchInput = document.getElementById('hwSearchInput');
+  const sortSelect = document.getElementById('hwSortSelect');
+  const showingCount = document.getElementById('hwShowingCount');
+  const emptyState = document.getElementById('hwEmptyResults');
+  const grid = document.querySelector('#featured-cars .products-grid');
+  let activeCategory = 'all';
+
+  function applyCatalogFilters() {
+    if (!grid) return;
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    const cards = Array.from(grid.querySelectorAll('.product-card'));
+    let visible = 0;
+
+    cards.forEach(card => {
+      const cat = (card.dataset.category || '').toLowerCase();
+      const pid = card.dataset.productId || '';
+      const text = card.innerText.toLowerCase();
+
+      let catMatch = false;
+      if (activeCategory === 'all') catMatch = true;
+      else if (activeCategory === 'favorites') catMatch = favSet.has(pid);
+      else catMatch = cat === activeCategory;
+
+      const queryMatch = !query || text.includes(query);
+      const show = catMatch && queryMatch;
+      card.style.display = show ? 'flex' : 'none';
+      if (show) {
+        card.classList.add('is-visible');
+        visible++;
+      }
+    });
+
+    if (showingCount) showingCount.textContent = `${visible} of ${cards.length} Cars • ₹179`;
+    if (emptyState) emptyState.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  document.querySelectorAll('#featured-cars .filter-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      activeCategory = tab.dataset.filter || 'all';
+      applyCatalogFilters();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyCatalogFilters);
+  }
+
+  if (sortSelect && grid) {
+    sortSelect.addEventListener('change', () => {
+      const cards = Array.from(grid.querySelectorAll('.product-card'));
+      if (sortSelect.value === 'az') {
+        cards.sort((a, b) => a.querySelector('.product-card__title').innerText.localeCompare(b.querySelector('.product-card__title').innerText));
+      } else if (sortSelect.value === 'za') {
+        cards.sort((a, b) => b.querySelector('.product-card__title').innerText.localeCompare(a.querySelector('.product-card__title').innerText));
+      } else {
+        cards.sort((a, b) => (parseInt(a.dataset.order) || 0) - (parseInt(b.dataset.order) || 0));
+      }
+      cards.forEach(c => grid.appendChild(c));
+    });
+  }
+
+  const resetBtn = document.getElementById('hwResetFiltersBtn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      activeCategory = 'all';
+      document.querySelectorAll('#featured-cars .filter-tab').forEach(t => t.classList.toggle('active', t.dataset.filter === 'all'));
+      applyCatalogFilters();
+    });
+  }
+
+  // 5. Mystery Garage Wheel Spin (Random Car Picker)
+  const spinBtn = document.getElementById('hwSpinRandomBtn');
+  if (spinBtn && grid) {
+    spinBtn.addEventListener('click', () => {
+      const cards = Array.from(grid.querySelectorAll('.product-card')).filter(c => c.style.display !== 'none');
+      if (!cards.length) return;
+      spinBtn.classList.add('is-spinning');
+      spinBtn.disabled = true;
+
+      let ticks = 0;
+      const maxTicks = 10;
+      const timer = setInterval(() => {
+        cards.forEach(c => c.style.outline = '');
+        const pick = cards[Math.floor(Math.random() * cards.length)];
+        pick.style.outline = '3px solid #ff6b00';
+        ticks++;
+        if (ticks >= maxTicks) {
+          clearInterval(timer);
+          spinBtn.classList.remove('is-spinning');
+          spinBtn.disabled = false;
+          setTimeout(() => {
+            pick.style.outline = '';
+            const buyTrigger = pick.querySelector('.btn-quick-buy');
+            if (buyTrigger) buyTrigger.click();
+          }, 260);
+        }
+      }, 80);
+    });
+  }
+
+  // 6. 1-Click Bundle Add in Pack Finder
+  const addBundleBtn = document.getElementById('PackAddBundleBtn');
+  if (addBundleBtn && grid) {
+    addBundleBtn.addEventListener('click', () => {
+      const style = document.getElementById('PackStyle')?.value || 'jdm';
+      const count = parseInt(document.getElementById('PackCount')?.value) || 6;
+      const matching = Array.from(grid.querySelectorAll(`.product-card[data-category="${style}"]`));
+      const pool = matching.length ? matching : Array.from(grid.querySelectorAll('.product-card'));
+      if (!window.vimiCartAPI || !pool.length) return;
+
+      for (let i = 0; i < count; i++) {
+        const card = pool[i % pool.length];
+        const link = card.querySelector('.open-buying-window');
+        if (link) {
+          window.vimiCartAPI.addItem({
+            title: link.dataset.productTitle,
+            price: 179,
+            image: link.dataset.productImage,
+            quantity: 1
+          });
+        }
+      }
+      if (window.showVimiToast) {
+        window.showVimiToast(`🏁 Added ${count}-Car ${style.toUpperCase()} Bundle (₹${(count * 179).toLocaleString('en-IN')})!`);
+      }
+    });
+  }
+});

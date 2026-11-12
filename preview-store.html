@@ -73,6 +73,7 @@
   </style>
 </head>
 <body class="vimi-store template-index">
+  <div class="hw-scroll-progress" id="hwScrollProgress"></div>
 
   <!-- Announcement Bar -->
   <div class="announcement-bar" role="region" aria-label="Announcement">
@@ -414,6 +415,9 @@
       </div>
     </section>
 
+    <!-- Checkered Racing Flag Divider -->
+    <div class="hw-checkered-strip" aria-hidden="true"></div>
+
     <!-- Featured Hot Wheels Collection (ALL 23 CARS AT ₹179) -->
     <section class="section-featured-collection" id="featured-cars">
       <div class="container">
@@ -429,6 +433,23 @@
             <button type="button" class="filter-tab" data-filter="exotics">Exotics &amp; Supercars</button>
             <button type="button" class="filter-tab" data-filter="muscle">American Muscle</button>
             <button type="button" class="filter-tab" data-filter="track">Track Stars &amp; Legends</button>
+            <button type="button" class="filter-tab" data-filter="favorites">❤️ Favorites (<span id="hwFavCount">0</span>)</button>
+          </div>
+
+          <div class="hw-catalog-controls">
+            <div class="hw-search-wrap">
+              <svg class="hw-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="search" id="hwSearchInput" class="hw-search-input" placeholder="Search Supra, Porsche, Batmobile, Mustang..." aria-label="Search Hot Wheels cars">
+            </div>
+            <div class="hw-controls-right">
+              <span class="hw-count-pill" id="hwShowingCount">23 of 23 Cars • ₹179</span>
+              <button type="button" class="hw-spin-btn" id="hwSpinRandomBtn" title="Pick a random Hot Wheels car">🎲 Spin Random Car</button>
+              <select id="hwSortSelect" class="hw-sort-select" aria-label="Sort cars">
+                <option value="featured">Sort: Featured</option>
+                <option value="az">Name: A → Z</option>
+                <option value="za">Name: Z → A</option>
+              </select>
+            </div>
           </div>
         </div>
 
@@ -437,6 +458,7 @@
       <div class="product-card" data-product-id="hw-02" data-category="jdm" data-order="1">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">JDM GRAIL</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-02" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Toyota Supra (MK4 A80)" data-product-price="179" data-product-compare="179"
              data-product-badge="JDM GRAIL" data-product-image="hw-car-02.jpg">
@@ -482,6 +504,7 @@
       <div class="product-card" data-product-id="hw-03" data-category="jdm" data-order="2">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">VTEC LEGEND</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-03" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels &#x27;99 Honda Civic Type R (EK9)" data-product-price="179" data-product-compare="179"
              data-product-badge="VTEC LEGEND" data-product-image="hw-car-03.jpg">
@@ -527,6 +550,7 @@
       <div class="product-card" data-product-id="hw-04" data-category="jdm" data-order="3">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">ROTARY DRIFT</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-04" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Mazda RX-7 (FD3S)" data-product-price="179" data-product-compare="179"
              data-product-badge="ROTARY DRIFT" data-product-image="hw-car-04.jpg">
@@ -572,6 +596,7 @@
       <div class="product-card" data-product-id="hw-05" data-category="jdm" data-order="4">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">CLASSIC JDM</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-05" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Custom Datsun 240Z (#23)" data-product-price="179" data-product-compare="179"
              data-product-badge="CLASSIC JDM" data-product-image="hw-car-05.jpg">
@@ -617,6 +642,7 @@
       <div class="product-card" data-product-id="hw-06" data-category="jdm" data-order="5">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">AWD TURBO</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-06" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Subaru WRX STI Rally" data-product-price="179" data-product-compare="179"
              data-product-badge="AWD TURBO" data-product-image="hw-car-06.jpg">
@@ -662,6 +688,7 @@
       <div class="product-card" data-product-id="hw-07" data-category="exotics" data-order="6">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">HW EXOTICS</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-07" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Porsche 911 GT3 (992)" data-product-price="179" data-product-compare="179"
              data-product-badge="HW EXOTICS" data-product-image="hw-car-07.jpg">
@@ -707,6 +734,7 @@
       <div class="product-card" data-product-id="hw-08" data-category="exotics" data-order="7">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">V10 EXOTIC</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-08" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Lamborghini Huracán LP 610-4" data-product-price="179" data-product-compare="179"
              data-product-badge="V10 EXOTIC" data-product-image="hw-car-08.jpg">
@@ -752,6 +780,7 @@
       <div class="product-card" data-product-id="hw-09" data-category="exotics" data-order="8">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">HYPERCAR</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-09" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels McLaren P1 Hypercar" data-product-price="179" data-product-compare="179"
              data-product-badge="HYPERCAR" data-product-image="hw-car-09.jpg">
@@ -797,6 +826,7 @@
       <div class="product-card" data-product-id="hw-10" data-category="exotics" data-order="9">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">SPEED KING</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-10" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Koenigsegg Jesko Absolut" data-product-price="179" data-product-compare="179"
              data-product-badge="SPEED KING" data-product-image="hw-car-10.jpg">
@@ -842,6 +872,7 @@
       <div class="product-card" data-product-id="hw-11" data-category="exotics" data-order="10">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">W16 QUAD</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-11" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels &#x27;16 Bugatti Chiron" data-product-price="179" data-product-compare="179"
              data-product-badge="W16 QUAD" data-product-image="hw-car-11.jpg">
@@ -887,6 +918,7 @@
       <div class="product-card" data-product-id="hw-12" data-category="exotics" data-order="11">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">CARBON TRACK</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-12" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Pagani Zonda R Track" data-product-price="179" data-product-compare="179"
              data-product-badge="CARBON TRACK" data-product-image="hw-car-12.jpg">
@@ -932,6 +964,7 @@
       <div class="product-card" data-product-id="hw-13" data-category="muscle" data-order="12">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">MUSCLE MANIA</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-13" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels &#x27;69 Ford Mustang Boss 302" data-product-price="179" data-product-compare="179"
              data-product-badge="MUSCLE MANIA" data-product-image="hw-car-13.jpg">
@@ -977,6 +1010,7 @@
       <div class="product-card" data-product-id="hw-14" data-category="muscle" data-order="13">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">HEMI BLOWER</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-14" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels &#x27;70 Dodge Charger R/T" data-product-price="179" data-product-compare="179"
              data-product-badge="HEMI BLOWER" data-product-image="hw-car-14.jpg">
@@ -1022,6 +1056,7 @@
       <div class="product-card" data-product-id="hw-15" data-category="muscle" data-order="14">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">CLASSIC SS</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-15" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels &#x27;69 Chevy Camaro SS" data-product-price="179" data-product-compare="179"
              data-product-badge="CLASSIC SS" data-product-image="hw-car-15.jpg">
@@ -1067,6 +1102,7 @@
       <div class="product-card" data-product-id="hw-16" data-category="muscle" data-order="15">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">GT RACING</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-16" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Corvette C8.R Race Car" data-product-price="179" data-product-compare="179"
              data-product-badge="GT RACING" data-product-image="hw-car-16.jpg">
@@ -1112,6 +1148,7 @@
       <div class="product-card" data-product-id="hw-17" data-category="muscle" data-order="16">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">426 HEMI</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-17" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels &#x27;70 Plymouth Barracuda 426" data-product-price="179" data-product-compare="179"
              data-product-badge="426 HEMI" data-product-image="hw-car-17.jpg">
@@ -1157,6 +1194,7 @@
       <div class="product-card" data-product-id="hw-18" data-category="muscle" data-order="17">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">LE MANS ICON</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-18" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Ford GT40 Le Mans (#59)" data-product-price="179" data-product-compare="179"
              data-product-badge="LE MANS ICON" data-product-image="hw-car-18.jpg">
@@ -1202,6 +1240,7 @@
       <div class="product-card" data-product-id="hw-19" data-category="track" data-order="18">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">HW ORIGINAL</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-19" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Twin Mill (Original Legend)" data-product-price="179" data-product-compare="179"
              data-product-badge="HW ORIGINAL" data-product-image="hw-car-19.jpg">
@@ -1247,6 +1286,7 @@
       <div class="product-card" data-product-id="hw-20" data-category="track" data-order="19">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">FAN FAVORITE</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-20" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Bone Shaker Skull Rod" data-product-price="179" data-product-compare="179"
              data-product-badge="FAN FAVORITE" data-product-image="hw-car-20.jpg">
@@ -1292,6 +1332,7 @@
       <div class="product-card" data-product-id="hw-21" data-category="track" data-order="20">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">CLASSIC ROD</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-21" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Rodger Dodger Flame Edition" data-product-price="179" data-product-compare="179"
              data-product-badge="CLASSIC ROD" data-product-image="hw-car-21.jpg">
@@ -1337,6 +1378,7 @@
       <div class="product-card" data-product-id="hw-22" data-category="track" data-order="21">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">WORLD RACE</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-22" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Deora II World Race" data-product-price="179" data-product-compare="179"
              data-product-badge="WORLD RACE" data-product-image="hw-car-22.jpg">
@@ -1382,6 +1424,7 @@
       <div class="product-card" data-product-id="hw-23" data-category="track" data-order="22">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">BATMAN</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-23" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Batman Arkham Knight Batmobile" data-product-price="179" data-product-compare="179"
              data-product-badge="BATMAN" data-product-image="hw-car-23.jpg">
@@ -1427,6 +1470,7 @@
       <div class="product-card" data-product-id="hw-24" data-category="track" data-order="23">
         <div class="product-card__media-wrapper">
           <span class="product-card__badge">ENDURANCE</span>
+          <button type="button" class="hw-fav-btn" data-pid="hw-24" aria-label="Save to favorites" title="Save to Favorites">♥</button>
           <a href="#buying-window" class="product-card__link open-buying-window"
              data-product-title="Hot Wheels Mazda 787B Prototype" data-product-price="179" data-product-compare="179"
              data-product-badge="ENDURANCE" data-product-image="hw-car-24.jpg">
@@ -1469,6 +1513,10 @@
           </div>
         </div>
       </div>
+          <div class="hw-empty-results" id="hwEmptyResults" style="display: none;">
+            <p style="font-size: 1.1rem; font-weight: 800; margin-bottom: 10px;">No Hot Wheels castings matched your filter.</p>
+            <button type="button" class="btn btn--primary" id="hwResetFiltersBtn">Show All 23 Cars</button>
+          </div>
         </div>
 
         <div class="collection-footer-cta">
@@ -1568,6 +1616,9 @@
           </div>
           <div class="fit-result-badge" id="PackResultBadge">
             🏁 Recommended: <strong>6-Car JDM Bundle — ₹1,074</strong> (6 × ₹179) • Free Delivery + 1 FREE Car Unlocked!<br><span style="font-size:0.8rem;font-weight:500;">Top Picks: Toyota Supra MK4, Civic Type R EK9, Mazda RX-7 FD3S • Shipped in rigid corrugated armor with bubble wrap for mint blisters.</span>
+          </div>
+          <div style="margin-top: 16px;">
+            <button type="button" class="btn btn--primary" id="PackAddBundleBtn">⚡ ADD THIS BUNDLE TO GARAGE BAG</button>
           </div>
         </div>
       </div>
